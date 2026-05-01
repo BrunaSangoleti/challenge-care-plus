@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>Care Plus</title>
+</head>
+
+<body>
+    <nav class="sidebar">
+        <a href="#" class="logo">Care Plus</a>
+        <ul class="sidebar-menu">
+            <li><a href="./index.html" class="active">Dashboard</a></li>
+            <li><a href="./Agendar-consulta.html"> Agendar consulta</a></li>
+            <li><a href="./Agendamento.html">Meus agendamentos</a></li>
+            <li><a href="./Pagina-pontos.html">Meus pontos</a></li>
+            <li><a href="">Programas</a></li>
+            <li><a href="./Guia-de-saude.html">Guia de saúde</a></li>
+            <li><a href="./Configuracoes.html">Configurações</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+    <h1 class="page-title">Dashboard</h1>
+    <div class="title-underline"></div>
+
+    <!-- Resumo do Dashboard usando Grid do Bootstrap -->
+    <div class="row mb-5">
+        <!-- Card de Saldo de Pontos -->
+        <div class="col-lg-4 col-md-12 mb-3">
+            <div class="balance-card h-100 p-4 d-flex flex-column justify-content-center shadow-sm">
+                <p class="balance-label mb-2">Seu Saldo Atual</p>
+                <h2 class="balance-value mb-2" style="font-size: 2.5rem;">2.850 pts</h2>
+                <p class="balance-footer mb-0">Troque por benefícios!</p>
+                <a href="./Pagina-pontos.html" class="btn btn-sm btn-outline-primary mt-3 w-50">Ver Missões</a>
+            </div>
+        </div>
+
+        <!-- Card de Previsão do Tempo (Movido para o grid) -->
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="booking-card weather-card h-100 p-4 d-flex flex-column justify-content-center">
+                <h3 class="fs-6 text-primary fw-bold mb-3">Previsão para <span id="weather-date">25/10/2026</span></h3>
+                <div class="weather-info text-center">
+                    <div id="weather-icon" style="font-size: 2.5rem;">🌧️</div>
+                    <p class="weather-alert mt-2 mb-0" id="weather-text" style="font-size: 0.85rem;">
+                        <strong>Atenção:</strong> Previsão de <strong>Chuva Intensa</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card de Status do Guia de Saúde -->
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="booking-card h-100 p-4 d-flex flex-column justify-content-center">
+                <h3 class="fs-6 text-primary fw-bold mb-3">Guia de Prevenção</h3>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="fw-semibold" style="font-size: 0.9rem; color: #333;">Check-up Geral</span>
+                    <span class="status-badge status-on-time">EM DIA</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-semibold" style="font-size: 0.9rem; color: #333;">Odontologia</span>
+                    <span class="status-badge status-late">ATRASADO</span>
+                </div>
+                <a href="./Guia-de-saude.html" class="btn btn-sm btn-outline-danger mt-3 w-100">Agendar Pendências</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container para aproximar os cards -->
+    <div class="cards-container">
+        <!-- Primeiro Card (com título) -->
+        <div class="appointment-card">
+            <h2 class="card-subtitle">Consultas Marcadas</h2>
+            <table class="appointment-table">
+                <thead class="table-header">
+                    <tr>
+                        <th>Especialidade</th>
+                        <th>Data/Hora</th>
+                        <th>Localização</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-row">
+                        <td class="specialty-info">
+                            <strong>Cardiologia</strong>
+                            <span>Dr. Silva</span>
+                        </td>
+                        <td>25/10 - 09:30</td>
+                        <td>
+                            <div class="location-container">
+                                <span class="location-name">Unidade Paulista</span>
+                                <div class="map-buttons">
+                                    <a href="#" class="btn-tag btn-maps">Maps</a>
+                                    <a href="#" class="btn-tag btn-waze">Waze</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn-action btn-confirm">Confirmar</button>
+                                <button class="btn-action btn-reschedule">Remarcar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Segundo Card (sem título repetido, colado ao de cima) -->
+        <div class="appointment-card no-title">
+            <table class="appointment-table">
+                <tbody>
+                    <tr class="table-row">
+                        <td class="specialty-info">
+                            <strong>Cirurgião-dentista</strong>
+                            <span>Dra. Isabel</span>
+                        </td>
+                        <td>02/11 - 09:30</td>
+                        <td>
+                            <div class="location-container">
+                                <span class="location-name">Unidade Paulista</span>
+                                <div class="map-buttons">
+                                    <a href="#" class="btn-tag btn-maps">Maps</a>
+                                    <a href="#" class="btn-tag btn-waze">Waze</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn-action btn-confirm">Confirmar</button>
+                                <button class="btn-action btn-reschedule">Remarcar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h1 class="page-title p-3">Care Plus +</h1>
+        <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12 p-3">
+                        <article class="card">
+                            <header class="card-header">
+                                <h2>Ecossistema integrado</h2>
+                                <p>de saúde é tendência no cuidado preventivo e individualizado</p>
+                            </header>
+                            <img src="./src/img/adb32c8ff8721509fed67915687e9dc5dc187ed1.png" alt="Ecossistema integrado de saúde">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Entenda como o ecossistema integrado de saúde melhora o cuidado preventivo e individualizado e garante uma jornada completa ao paciente.
+                                </p>
+                                <div class="action-buttons">
+                                    <a href="#" class="btn btn-action btn-confirm">Saiba mais!</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 p-3">
+                        <article class="card">
+                            <header class="card-header">
+                                <h2>Varicela:</h2>
+                                <p>por que a vacina é importante em todas as idades</p>
+                            </header>
+                            <img src="./src/img/3e866a7a24cf7e8a4d8854680a88104a58f24cfa.png" alt="Ecossistema integrado de saúde">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Entenda os riscos da varicela em adultos e como a vacinação, ajuda a prevenir complicações, afastamentos e impactos no ambiente corporativo.
+                                </p>
+                                <div class="action-buttons">
+                                    <a href="#" class="btn btn-action btn-confirm">Saiba mais!</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 p-3">
+                        <article class="card">
+                            <header class="card-header">
+                                <h2>Acreditação JCI</h2>
+                                <p>na Care Plus Clinic Vila Olímpia </p>
+                            </header>
+                            <img src="./src/img/638dde275ce7fde5e93590af9e7d59e9646ac11d.jpeg" alt="Ecossistema integrado de saúde">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Reconhecimento internacional que reafirma nosso padrão de qualidade
+                                </p>
+                                <div class="action-buttons">
+                                    <a href="#" class="btn btn-action btn-confirm">Saiba mais!</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+    </div>
+</main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>

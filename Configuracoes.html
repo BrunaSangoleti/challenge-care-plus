@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>Care Plus</title>
+</head>
+
+<body>
+    <nav class="sidebar">
+        <a href="#" class="logo">Care Plus</a>
+        <ul class="sidebar-menu">
+            <li><a href="./index.html">Dashboard</a></li>
+
+            <li><a href="./Agendar-consulta.html"> Agendar consulta</a></li>
+            <li><a href="./Agendamento.html">Meus agendamentos</a></li>
+            <li><a href="./Pagina-pontos.html">Meus pontos</a></li>
+            <li><a href="">Programas</a></li>
+            <li><a href="./Guia-de-saude.html">Guia de saúde</a></li>
+            <li><a href="./Configuracoes.html" class="active">Configurações</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h1 class="page-title">Configurações</h1>
+        <div class="title-underline"></div>
+
+        <div class="settings-grid">
+            <!-- Coluna da Esquerda -->
+            <div class="settings-column">
+                <!-- Informações Pessoais -->
+                <section class="settings-card">
+                    <h3>Informações Pessoais</h3>
+                <div class="custom-form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" value="João Silva Santos" readonly>
+                    </div>
+                    <div class="input-row">
+                    <div class="custom-form-group">
+                            <label>CPF</label>
+                            <input type="text" value="***.456.789-**" readonly>
+                        </div>
+                    <div class="custom-form-group">
+                            <label>Data de Nascimento</label>
+                            <input type="text" value="12/05/1985" readonly>
+                        </div>
+                    </div>
+                <div class="custom-form-group">
+                        <label>E-mail</label>
+                        <div class="editable-input">
+                            <input type="email" value="joaosilva@email.com">
+                            <span class="edit-icon">✎</span>
+                        </div>
+                    </div>
+                <div class="custom-form-group">
+                        <label>Celular</label>
+                        <div class="editable-input">
+                            <input type="text" value="(11) 9****-1234">
+                            <span class="edit-icon">✎</span>
+                        </div>
+                    </div>
+                    <button class="btn-secondary align-right">Alterar Dados</button>
+                </section>
+
+                <!-- Segurança -->
+                <section class="settings-card">
+                    <h3>Segurança</h3>
+                <div class="custom-form-group flex-row">
+                        <div>
+                            <label>Senha</label>
+                            <input type="password" value="********" readonly class="no-bg">
+                        </div>
+                        <button class="btn-text">Alterar Senha</button>
+                    </div>
+                    <div class="toggle-group">
+                        <div class="toggle-text">
+                            <strong>2-Factor Authentication (2FA)</strong>
+                            <span>Ativar via SMS/E-mail</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="device-info">
+                        <strong>Dispositivos Logados</strong>
+                        <div class="flex-row">
+                            <span>2 dispositivos ativos</span>
+                            <button class="btn-text">Gerenciar Dispositivos</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Preferências de Notificação -->
+                <section class="settings-card">
+                    <h3>Preferências de Notificação</h3>
+                    <p class="section-instr">Avisos sobre Consultas</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox"> Receber por E-mail</label>
+                        <label><input type="checkbox" checked> Receber avisos sobre consultas e exames via
+                            WhatsApp</label>
+                        <label><input type="checkbox"> Receber por SMS</label>
+                    </div>
+                    <p class="section-instr mt-20">Dicas de Saúde e Promoções</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" checked> Receber novidades</label>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Coluna da Direita -->
+            <div class="settings-column">
+                <!-- Plano e Carteirinha -->
+                <section class="settings-card">
+                    <div class="flex-row mb-15">
+                        <h3>Plano e Carteirinha</h3>
+                        <button class="btn-green">Ativo</button>
+                    </div>
+                    <div class="plan-details">
+                        <p><strong>Nome do Plano</strong><br>Plano Executivo Plus</p>
+                        <p><strong>Número da Carteirinha</strong><br>1234.5678.9012.3456</p>
+                    </div>
+                    <div class="digital-card-preview">
+                        <div class="card-chip"></div>
+                        <p class="card-brand">Carteirinha CarePlus</p>
+                        <div class="card-qr">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=CarePlus-User-123"
+                                alt="QR Code">
+                        </div>
+                    </div>
+
+                </section>
+
+
+
+                <!-- Informações da Conta -->
+                <section class="settings-card">
+                    <h3>Informações da Conta</h3>
+                    <div class="account-info">
+                        <p><strong>Tipo de Perfil</strong><br>Titular</p>
+                        <p><strong>Empresa Vinculada</strong><br>Empresa ABC Ltda.</p>
+                    </div>
+                    <button class="btn-danger full-width mt-20">Sair da Conta</button>
+                </section>
+            </div>
+        </div>
+    </main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
