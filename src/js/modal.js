@@ -3,7 +3,7 @@ function mostrarConfirmacao() {
     const modal = document.getElementById("modalConfirmacao");
 
     // Faz o modal aparecer
-    modal.style.display = "block";
+    modal.style.display = "flex";
 }
 
 function fecharModal() {

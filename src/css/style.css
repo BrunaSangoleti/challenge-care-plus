@@ -227,6 +227,11 @@ img {
 
 .btn-confirm:hover {
     opacity: 0.7;
+    cursor: pointer;
+    /* Garante que o cursor de "mãozinha" apareça */
+    transition: opacity 0.3s ease;
+    border-color: var(--azul-escuro);
+
 }
 
 .btn-reschedule {
@@ -931,7 +936,7 @@ input:checked+.slider:before {
 /* Fundo do Modal - Agora com Flexbox para centralizar */
 .modal {
     display: none;
-    /* Alterar para 'flex' via JS para abrir */
+    /* Mantém fechado inicialmente */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -939,13 +944,16 @@ input:checked+.slider:before {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    /* Escurecimento mais leve/delicado */
     backdrop-filter: blur(3px);
-    /* Desfoque suave no fundo */
 
-    /* Centralização perfeita */
+    /* Estas propriedades só funcionam se o display for 'flex' */
     justify-content: center;
     align-items: center;
+}
+
+/* Adicione esta classe para facilitar o controle via JS */
+.modal.active {
+    display: flex;
 }
 
 /* Caixa do Modal - Tamanho reduzido e animação */
@@ -996,9 +1004,11 @@ input:checked+.slider:before {
 }
 
 /* Botões mais arredondados e elegantes */
-.btn-salvar {
+.btn-salvar,
+.btn-fechar {
     background-color: #002855;
     border-radius: 20px;
+    color: var(--branco);
     /* Botão mais oval */
     padding: 10px 20px;
     font-size: 0.85rem;
@@ -1006,9 +1016,19 @@ input:checked+.slider:before {
 }
 
 .btn-cancelar {
-    font-size: 0.8rem;
-    text-decoration: none;
-    color: #999;
+    background-color: var(--cinza-texto-suave);
+    border-radius: 20px;
+    color: var(--branco);
+    /* Botão mais oval */
+    padding: 10px 20px;
+    font-size: 0.85rem;
+}
+
+.btn-salvar:hover,
+.btn-cancelar {
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 /* 1. Garante que a coluna ocupe a altura total da linha */
@@ -1166,6 +1186,13 @@ input:checked+.slider:before {
     height: auto;
     /* Mantém a proporção original (não achata) */
     display: block;
-    
+}
 
+.mascote-pontos {
+    max-width: 26%;
+    /* Regra de ouro: nunca maior que o container */
+    height: auto;
+    /* Mantém a proporção original (não achata) */
+    display: flex;
+    align-self: flex-end;
 }
