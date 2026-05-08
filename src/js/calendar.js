@@ -11,17 +11,20 @@ const condicoesClima = {
     chuva: {
         icone: "🌧️",
         mensagem: "<strong>Alerta de Chuva:</strong> Recomendamos consulta Online.",
-        cor: "#e74c3c" 
+        cor: "#e74c3c", 
+        imagem:"../img/chuvoso.png"
     },
     sol: {
         icone: "☀️",
         mensagem: "<strong>Céu Limpo:</strong> Perfeito para consulta Presencial.",
-        cor: "#27ae60" 
+        cor: "#27ae60", 
+        imagem:"../img/ensolarado.png"
     },
     nublado: {
         icone: "☁️",
         mensagem: "<strong>Tempo Nublado:</strong> Condições estáveis para deslocamento.",
-        cor: "#7f8c8d" 
+        cor: "#7f8c8d", 
+        imagem:"../img/nublado.png"
     }
 };
 
