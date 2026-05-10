@@ -427,7 +427,9 @@ img {
     color: #dc3545;
     /* Vermelho */
 }
-
+a{
+    text-decoration:none;
+}
 /* Botão Agendar Agora */
 .btn-schedule-now {
     background-color: #002855;
@@ -519,7 +521,8 @@ img {
     padding: 5px 15px;
     border-radius: 4px;
     font-weight: 600;
-    cursor: pointer;
+    pointer-events: none; /* Faz o mouse "atravessar" o elemento */
+    cursor: default;
 }
 
 .btn-text {
