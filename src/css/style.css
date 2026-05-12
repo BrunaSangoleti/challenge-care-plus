@@ -233,6 +233,13 @@ img {
     border-color: var(--azul-escuro);
 
 }
+.btn-confirm.confirmado {
+    background-color: #f0fdf4 !important; /* Verde bem claro de fundo */
+    color: var(--azul-tag) !important;           /* Verde escuro para o texto */
+    border: 1px solid var(--azul-tag) !important;
+    cursor: default;
+    pointer-events: none; /* Garante que o usuário não consiga clicar mais */
+}
 
 .btn-reschedule {
     background: white;
@@ -1333,5 +1340,25 @@ input:checked+.slider:before {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+.btn-participar.participando {
+    background-color: #e8f5e9;
+    color: var(--azul-tag);
+    border: 1px solid var(--azul-tag);
+    cursor: default;
+}
 
+.mensagem-sucesso {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    border-left: 4px solid #2e7d32;
+}
+
+/* Classe utilitária para esconder elementos */
+.hidden {
+    display: none;
+}
 

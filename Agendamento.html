@@ -28,84 +28,88 @@
                     <h1 class="page-title">Meus agendamentos</h1>
                     <div class="title-underline"></div>
 
-                   <!-- Container para aproximar os cards -->
-        <div class="cards-container">
-            <!-- Primeiro Card (com título) -->
-            <div class="appointment-card">
-                <h2 class="card-subtitle">Consultas Marcadas</h2>
-                <table class="appointment-table">
-                    <thead class="table-header">
-                        <tr>
-                            <th>Especialidade</th>
-                            <th>Data/Hora</th>
-                            <th>Localização</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="table-row">
-                            <td class="specialty-info">
-                                <strong>Cardiologia</strong>
-                                <span>Dr. Silva</span>
-                            </td>
-                            <td class="data-hora-card">25/10/2026 - 09:30</td>
-                            <td>
-                                <div class="location-container">
-                                    <span class="location-name">Unidade Paulista</span>
-                                    <div class="map-buttons">
-                                        <a href="https://www.google.com/maps/search/?api=1&query=-23.5534,-46.6558"
-                                            target="_blank" rel="noopener noreferrer" class="btn-tag btn-maps">Maps</a>
-                                        <a href="https://waze.com/ul?ll=-23.5534,-46.6558&navigate=yes" target="_blank"
-                                            rel="noopener noreferrer" class="btn-tag btn-waze">Waze</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="btn-action btn-confirm"
-                                        onclick="mostrarConfirmacao()">Confirmar</button>
-                                    <button class="btn-action btn-reschedule"
-                                        onclick="abrirRemarcar(this)">Remarcar</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                    <!-- Container para aproximar os cards -->
+                    <div class="cards-container">
+                        <!-- Primeiro Card (com título) -->
+                        <div class="appointment-card">
+                            <h2 class="card-subtitle">Consultas Marcadas</h2>
+                            <table class="appointment-table">
+                                <thead class="table-header">
+                                    <tr>
+                                        <th>Especialidade</th>
+                                        <th>Data/Hora</th>
+                                        <th>Localização</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-row">
+                                        <td class="specialty-info">
+                                            <strong>Cardiologia</strong>
+                                            <span>Dr. Silva</span>
+                                        </td>
+                                        <td class="data-hora-card">25/10/2026 - 09:30</td>
+                                        <td>
+                                            <div class="location-container">
+                                                <span class="location-name">Unidade Paulista</span>
+                                                <div class="map-buttons">
+                                                    <a href="https://www.google.com/maps/search/?api=1&query=-23.5534,-46.6558"
+                                                        target="_blank" rel="noopener noreferrer"
+                                                        class="btn-tag btn-maps">Maps</a>
+                                                    <a href="https://waze.com/ul?ll=-23.5534,-46.6558&navigate=yes"
+                                                        target="_blank" rel="noopener noreferrer"
+                                                        class="btn-tag btn-waze">Waze</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn-action btn-confirm"
+                                                    onclick="mostrarConfirmacao()">Confirmar</button>
+                                                <button class="btn-action btn-reschedule"
+                                                    onclick="abrirRemarcar(this)">Remarcar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-            <!-- Segundo Card (sem título repetido, colado ao de cima) -->
-            <div class="appointment-card no-title">
-                <table class="appointment-table">
-                    <tbody>
-                        <tr class="table-row">
-                            <td class="specialty-info">
-                                <strong>Dermatologia</strong>
-                                <span>Dra. Isabel</span>
-                            </td>
-                            <td class="data-hora-card">02/11/2026 - 09:30</td>
-                            <td>
-                                <div class="location-container">
-                                    <span class="location-name">Unidade Paulista</span>
-                                    <div class="map-buttons">
-                                        <a href="https://www.google.com/maps/search/?api=1&query=-23.5534,-46.6558"
-                                            target="_blank" rel="noopener noreferrer" class="btn-tag btn-maps">Maps</a>
-                                        <a href="https://waze.com/ul?ll=-23.5534,-46.6558&navigate=yes" target="_blank"
-                                            rel="noopener noreferrer" class="btn-tag btn-waze">Waze</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="btn-action btn-confirm"
-                                        onclick="mostrarConfirmacao()">Confirmar</button>
-                                    <button class="btn-action btn-reschedule"
-                                        onclick="abrirRemarcar(this)">Remarcar</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                        <!-- Segundo Card (sem título repetido, colado ao de cima) -->
+                        <div class="appointment-card no-title">
+                            <table class="appointment-table">
+                                <tbody>
+                                    <tr class="table-row">
+                                        <td class="specialty-info">
+                                            <strong>Dermatologia</strong>
+                                            <span>Dra. Isabel</span>
+                                        </td>
+                                        <td class="data-hora-card">02/11/2026 - 09:30</td>
+                                        <td>
+                                            <div class="location-container">
+                                                <span class="location-name">Unidade Paulista</span>
+                                                <div class="map-buttons">
+                                                    <a href="https://www.google.com/maps/search/?api=1&query=-23.5534,-46.6558"
+                                                        target="_blank" rel="noopener noreferrer"
+                                                        class="btn-tag btn-maps">Maps</a>
+                                                    <a href="https://waze.com/ul?ll=-23.5534,-46.6558&navigate=yes"
+                                                        target="_blank" rel="noopener noreferrer"
+                                                        class="btn-tag btn-waze">Waze</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn-action btn-confirm"
+                                                    onclick="mostrarConfirmacao()">Confirmar</button>
+                                                <button class="btn-action btn-reschedule"
+                                                    onclick="abrirRemarcar(this)">Remarcar</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
 
                         <div id="modalConfirmacao" class="modal">
@@ -150,6 +154,7 @@
                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
                             integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                             crossorigin="anonymous"></script>
+                        <script src="./src/js/btnListener.js"></script>
                         <script src="./src/js/modal.js"></script>
 </body>
 
