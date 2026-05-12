@@ -89,37 +89,36 @@ function fecharRemarcar() {
     }
 }
 
-function abrirGoogleCalendar() {
-    try {
-        const titulo = document.getElementById('titulo').value || "Novo Evento";
-        const dataInput = document.getElementById('dataHora').value;
+function gerarLinkGoogleCalendar() {
+    // 1. Captura dos elementos
+    const dataTexto = document.getElementById('weather-date').innerText;
+    
+    // Captura dos valores selecionados (ou texto padrão caso esteja vazio)
+    const selectHorario = document.getElementById('select-horario');
+    const horario = selectHorario && selectHorario.value ? selectHorario.value : "09:00";
+    
+    const selectUnidade = document.getElementById('select-unidade');
+    const unidade = selectUnidade && selectUnidade.value ? selectUnidade.options[selectUnidade.selectedIndex].text : "Unidade Care Plus";
 
-        if (!dataInput) {
-            alert("Por favor, selecione uma data e hora.");
-            return;
-        }
+    // 2. Formatar data (DD/MM/YYYY -> YYYYMMDD)
+    const partesData = dataTexto.split('/');
+    const dataFormatada = partesData[2] + partesData[1] + partesData[0];
 
-        // Limpeza da data: de "2026-05-11T14:30" para "20260511T143000"
-        // O Google exige o formato YYYYMMDDTHHMMSS
-        const dataFormatada = dataInput.replace(/[-:]/g, "") + "00";
-        
-        // Definindo o fim do evento para 1 hora depois (opcional)
-        // Para simplificar, usaremos a mesma data (evento pontual)
-        const datas = `${dataFormatada}/${dataFormatada}`;
+    // 3. Formatar horário (09:30 -> 093000)
+    const horaLimpa = horario.replace(':', '').padStart(4, '0');
+    const horaInicio = horaLimpa + "00";
+    
+    // Define fim da consulta (1 hora depois)
+    const horaFim = (parseInt(horaLimpa) + 100).toString().padStart(4, '0') + "00";
 
-        const baseUrl = "https://www.google.com/calendar/render?action=TEMPLATE";
-        const urlFinal = `${baseUrl}&text=${encodeURIComponent(titulo)}&dates=${datas}&sf=true&output=xml`;
+    // 4. Montar URL
+    const titulo = encodeURIComponent("Consulta Médica - Care Plus");
+    const local = encodeURIComponent(unidade);
+    const detalhes = encodeURIComponent(`Consulta agendada via Portal Care Plus.\nHorário: ${horario}`);
 
-        // Log para depuração (aperte F12 no navegador para ver se a URL está correta)
-        console.log("Abrindo URL:", urlFinal);
+    const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${titulo}&dates=${dataFormatada}T${horaInicio}/${dataFormatada}T${horaFim}&details=${detalhes}&location=${local}`;
 
-        // Abre em nova aba
-        const novaAba = window.open(urlFinal, '_blank');
-        
-        if (!novaAba) {
-            alert("O navegador bloqueou a abertura da aba. Por favor, permita pop-ups para este site.");
-        }
-    } catch (erro) {
-        console.error("Erro ao tentar abrir o calendário:", erro);
-    }
+    // 5. Abrir link e fechar modal
+    window.open(url, '_blank');
+    fecharModal(); 
 }

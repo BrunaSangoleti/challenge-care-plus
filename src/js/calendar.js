@@ -3,28 +3,27 @@ const calendarDays = document.getElementById('calendarDays');
 const prevBtn = document.getElementById('prevMonth');
 const nextBtn = document.getElementById('nextMonth');
 
-// Inicia em Março de 2026 conforme o layout do projeto
-let currentDate = new Date(2026, 2, 1);
+// Declaramos apenas UMA vez. O sistema inicia na data atual.
+let currentDate = new Date(); 
 
-// Simulação de estados climáticos para UX Dinâmico
 const condicoesClima = {
     chuva: {
         icone: "🌧️",
         mensagem: "<strong>Alerta de Chuva:</strong> Recomendamos consulta Online.",
         cor: "#e74c3c",
-        imagem: "../img/chuvoso.png"
+        imagem: "./src/img/chuvoso.png"
     },
     sol: {
         icone: "☀️",
         mensagem: "<strong>Céu Limpo:</strong> Perfeito para consulta Presencial.",
         cor: "#27ae60",
-        imagem: "../img/ensolarado.png"
+        imagem: "./src/img/ensolarado.png"
     },
     nublado: {
         icone: "☁️",
         mensagem: "<strong>Tempo Nublado:</strong> Condições estáveis para deslocamento.",
         cor: "#7f8c8d",
-        imagem: "../img/nublado.png"
+        imagem: "./src/img/nublado.jpg"
     }
 };
 
@@ -33,67 +32,66 @@ function renderCalendar() {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
 
+    // Data de hoje para comparação (zerando horas)
+    const hoje = new Date();
+    hoje.setHours(0, 0, 0, 0);
+
     const firstDayOfMonth = new Date(year, month, 1).getDay();
     const lastDayOfMonth = new Date(year, month + 1, 0).getDate();
 
     const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
     monthDisplay.innerText = `${monthNames[month]} ${year}`;
 
-    // Preenchimento de espaços vazios (dias da semana anterior)
+    // Preenchimento de dias vazios
     for (let i = 0; i < firstDayOfMonth; i++) {
         const emptyDiv = document.createElement('div');
         emptyDiv.classList.add('calendar-day', 'empty');
         calendarDays.appendChild(emptyDiv);
     }
 
-    // Criação dos dias do mês
+    // Geração dos dias
     for (let day = 1; day <= lastDayOfMonth; day++) {
         const dayElement = document.createElement('div');
         dayElement.classList.add('calendar-day');
         dayElement.innerText = day;
 
-        // Único evento de clique para gerenciar Seleção + Clima
-        dayElement.addEventListener('click', () => {
-            // 1. Gerenciar destaque visual
-            document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
-            dayElement.classList.add('selected');
+        // Data para verificação de bloqueio
+        const dataVerificacao = new Date(year, month, day);
 
-            // 2. Lógica de decisão do Clima (Simulação)
-            let climaSelecionado;
-            if (day % 3 === 0) {
-                climaSelecionado = condicoesClima.nublado;
-            } else if (day % 2 === 0) {
-                climaSelecionado = condicoesClima.sol;
-            } else {
-                climaSelecionado = condicoesClima.chuva;
-            }
+        if (dataVerificacao < hoje) {
+            // Se for antes de hoje, bloqueia
+            dayElement.classList.add('past-day');
+        } else {
+            // Se for hoje ou futuro, permite o clique
+            dayElement.addEventListener('click', () => {
+                document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
+                dayElement.classList.add('selected');
 
-            // 3. Atualização dos elementos de Previsão no HTML
-            const displayData = document.getElementById('weather-date');
-            const displayIcone = document.getElementById('weather-icon');
-            const displayTexto = document.getElementById('weather-text');
-            const diaFormatado = String(day).padStart(2, '0');
-            const mesFormatado = String(month + 1).padStart(2, '0');
+                let climaSelecionado;
+                if (day % 3 === 0) climaSelecionado = condicoesClima.nublado;
+                else if (day % 2 === 0) climaSelecionado = condicoesClima.sol;
+                else climaSelecionado = condicoesClima.chuva;
 
-            if (displayData) {
-                displayData.innerText = `${diaFormatado}/${mesFormatado}/${year}`;
-            }
+                const displayData = document.getElementById('weather-date');
+                const displayTexto = document.getElementById('weather-text');
+                const displayImagem = document.getElementById('weather-img'); 
 
-            
-            if (displayIcone) displayIcone.innerText = climaSelecionado.icone;
-            if (displayTexto) {
-                displayTexto.innerHTML = climaSelecionado.mensagem;
-                displayTexto.style.color = climaSelecionado.cor;
-            }
+                const diaFormatado = String(day).padStart(2, '0');
+                const mesFormatado = String(month + 1).padStart(2, '0');
 
-            console.log(`Data: ${day}/${month + 1}/${year} - Clima:`, climaSelecionado.icone);
-        });
-
+                if (displayData) displayData.innerText = `${diaFormatado}/${mesFormatado}/${year}`;
+                if (displayImagem) displayImagem.src = climaSelecionado.imagem;
+                if (displayTexto) {
+                    displayTexto.innerHTML = climaSelecionado.mensagem;
+                    displayTexto.style.color = climaSelecionado.cor;
+                }
+            });
+        }
         calendarDays.appendChild(dayElement);
     }
 }
 
-// Listeners dos botões de navegação
+// Botões de navegação
 prevBtn.addEventListener('click', () => {
     currentDate.setMonth(currentDate.getMonth() - 1);
     renderCalendar();
@@ -104,5 +102,5 @@ nextBtn.addEventListener('click', () => {
     renderCalendar();
 });
 
-// Execução inicial
+// Chamada inicial
 renderCalendar();

@@ -13,6 +13,7 @@
     --cinza-claro: #f8f9fa;
     --cinza-borda: #eee;
     --cinza-texto-suave: #6c757d;
+    --cinza-texto-escuro:#666;
     --branco: #ffffff;
 
     /* Sombras e Transparências */
@@ -43,27 +44,19 @@ img {
 .sidebar {
     width: 260px;
     background-color: var(--azul-escuro);
-    color: white;
+    color: var(--branco);
     padding: 30px 20px;
     height: 100vh;
     position: fixed;
 }
 
-.sidebar .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--dourado);
-    text-decoration: none;
-    display: block;
-    margin-bottom: 40px;
-}
 
 .sidebar-menu {
     list-style: none;
 }
 
 .sidebar-menu a {
-    color: white;
+    color: var(--branco);
     text-decoration: none;
     display: block;
     padding: 12px 0;
@@ -77,6 +70,25 @@ img {
 }
 
 /* CONTENT AREA */
+.logo {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;      /* Se for texto */
+    color: var(--branco);
+    text-align: center;
+}
+
+/* Se você estiver usando uma IMAGEM para a logo */
+.logo img {
+    width: 100%;          /* Ela tenta preencher o container... */
+    max-width: 160px;     /* ...mas para exatamente em 160px (tamanho ideal) */
+    height: auto;         /* ISSO evita que a imagem estique ou achate */
+    object-fit: contain;  /* Garante que a imagem caiba sem cortes */
+    display: block;
+    margin: 0 auto;       /* Centraliza na sidebar */
+}
 .content {
     margin-left: 260px;
     padding: 40px;
@@ -112,7 +124,7 @@ img {
 /* Gap 0 para ficarem colados */
 
 .appointment-card {
-    background: white;
+    background: var(--branco);
     padding: 20px;
     max-width: 900px;
     /* Define um limite de largura para o card */
@@ -144,7 +156,7 @@ img {
 .table-header th {
     text-align: left;
     padding: 10px;
-    color: #666;
+    color: var(--cinza-texto-escuro);
     font-size: 0.8rem;
     border-bottom: 1px solid #eee;
 }
@@ -174,7 +186,7 @@ img {
 .btn-tag {
     padding: 3px 8px;
     border-radius: 4px;
-    color: white;
+    color: var(--branco);
     font-size: 0.7rem;
     text-decoration: none;
 }
@@ -242,7 +254,7 @@ img {
 }
 
 .btn-reschedule {
-    background: white;
+    background: var(--branco);
     color: var(--azul-escuro);
     transition: opacity 0.3s ease;
     /* Adicionado */
@@ -252,7 +264,7 @@ img {
 
 .btn-reschedule:hover {
     background-color: var(--azul-hover);
-    color: #FFFFFF;
+    color: var(--branco);
     border-color: var(--azul-hover);
     opacity: 0.7;
 }
@@ -281,21 +293,21 @@ img {
 }
 
 .balance-label {
-    color: #003366;
+    color: var(--azul-escuro);
     font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 10px;
 }
 
 .balance-value {
-    color: #002855;
+    color: var(--azul-escuro);
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 .balance-footer {
-    color: #6c757d;
+    color: var(--cinza-texto-suave);
     font-size: 0.85rem;
 }
 
@@ -307,7 +319,7 @@ img {
 }
 
 .mission-card {
-    background: white;
+    background: var(--branco);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -322,24 +334,24 @@ img {
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: #FFD700;
+    background-color: var(--dourado);
 }
 
 .mission-card h3 {
-    color: #003366;
+    color: var(--azul-escuro);
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
 .mission-card p {
-    color: #444;
+    color: var(--cinza-texto-suave);
     font-size: 0.9rem;
     margin-bottom: 15px;
 }
 
 .btn-participate {
-    background-color: #002855;
-    color: white;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
     border: none;
     padding: 8px 20px;
     border-radius: 4px;
@@ -363,7 +375,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
+    color: var(--cinza-texto-escuro);
     font-size: 0.8rem;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.5);
@@ -372,7 +384,7 @@ img {
 
 /* Container do Card de Prevenção */
 .prevention-card {
-    background: white;
+    background: var(--branco);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -380,7 +392,7 @@ img {
 }
 
 .card-subtitle {
-    color: #003366;
+    color: var(--azul-escuro);
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 25px;
@@ -399,7 +411,7 @@ img {
 
 .table-header th {
     padding: 12px 15px;
-    color: #6c757d;
+    color: var(--cinza-texto-escuro);
     font-size: 0.85rem;
     font-weight: 600;
     border-bottom: 1px solid #dee2e6;
@@ -425,13 +437,13 @@ img {
 
 .status-on-time {
     background-color: #d4edda;
-    color: #28a745;
+    color: var(--verde-tag);
     /* Verde */
 }
 
 .status-late {
     background-color: #f8d7da;
-    color: #dc3545;
+    color: var(--vermelho-danger);
     /* Vermelho */
 }
 
@@ -441,8 +453,8 @@ a {
 
 /* Botão Agendar Agora */
 .btn-schedule-now {
-    background-color: #002855;
-    color: white;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
     border: none;
     padding: 8px 18px;
     border-radius: 4px;
@@ -453,7 +465,7 @@ a {
 }
 
 .btn-schedule-now:hover {
-    background-color: #003d80;
+    background-color: var(--azul-hover);
 }
 
 
@@ -466,7 +478,7 @@ a {
 }
 
 .settings-card {
-    background: white;
+    background: var(--branco);
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -490,7 +502,7 @@ a {
     display: block;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #555;
+    color: var(--cinza-texto-suave);
     margin-bottom: 5px;
 }
 
@@ -518,14 +530,14 @@ a {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #002855;
+    color: var(--azul-escuro);
     cursor: pointer;
 }
 
 /* BOTÕES ESPECÍFICOS */
 .btn-green {
-    background: #28a745;
-    color: white;
+    background: var(--verde-tag);
+    color: var(--branco);
     border: none;
     padding: 5px 15px;
     border-radius: 4px;
@@ -538,7 +550,7 @@ a {
 .btn-text {
     background: none;
     border: none;
-    color: #002855;
+    color: var(--azul-escuro);
     font-weight: 700;
     text-decoration: underline;
     cursor: pointer;
@@ -546,8 +558,8 @@ a {
 }
 
 .btn-danger {
-    background: #d9534f;
-    color: white;
+    background: var(--vermelho-danger);
+    color: var(--branco);
     border: none;
     padding: 12px;
     border-radius: 6px;
@@ -561,10 +573,10 @@ a {
 
 /* CARTEIRINHA DIGITAL */
 .digital-card-preview {
-    background: linear-gradient(135deg, #002855 0%, #004080 100%);
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-hover) 100%);
     border-radius: 10px;
     padding: 20px;
-    color: white;
+    color: var(--branco);
     position: relative;
     margin-top: 15px;
     display: flex;
@@ -580,7 +592,7 @@ a {
 .card-qr img {
     width: 60px;
     height: 60px;
-    background: white;
+    background: var(--branco);
     padding: 3px;
     border-radius: 4px;
 }
@@ -606,7 +618,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--cinza-fundo);
     transition: .4s;
     border-radius: 34px;
 }
@@ -618,13 +630,13 @@ a {
     width: 16px;
     left: 3px;
     bottom: 3px;
-    background-color: white;
+    background-color: var(--branco);
     transition: .4s;
     border-radius: 50%;
 }
 
 input:checked+.slider {
-    background-color: #28a745;
+    background-color: var(--verde-tag);
 }
 
 input:checked+.slider:before {
@@ -647,7 +659,7 @@ input:checked+.slider:before {
     border-radius: 50%;
     overflow: hidden;
     /* Corta o que sobrar da imagem para ficar circular */
-    border: 4px solid #ffffff;
+    border: 4px solid var(--branco);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     background-color: #f8f9fa;
     display: flex;
@@ -676,7 +688,7 @@ input:checked+.slider:before {
 }
 
 .booking-card {
-    background: white;
+    background: var(--branco);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -684,7 +696,7 @@ input:checked+.slider:before {
 }
 
 .booking-card h3 {
-    color: #003366;
+    color: var(--azul-escuro);
     font-size: 1rem;
     margin-bottom: 15px;
     font-weight: 700;
@@ -697,14 +709,14 @@ input:checked+.slider:before {
 }
 
 .weather-alert {
-    color: #cc0000;
+    color: var(--vermelho-danger);
     font-size: 0.9rem;
     margin: 10px 0;
 }
 
 .weather-tip {
     font-size: 0.75rem;
-    color: #555;
+    color: var(--cinza-texto-suave);
     font-style: italic;
 }
 
@@ -730,7 +742,7 @@ input:checked+.slider:before {
     border-radius: 6px;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
-    color: #444;
+    color: var(--cinza-texto-escuro);
 }
 
 /* Botões de Agendamento */
@@ -744,8 +756,8 @@ input:checked+.slider:before {
 }
 
 .btn-primary {
-    background-color: #002855;
-    color: white;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
     padding: 15px 30px;
     border: none;
     border-radius: 8px;
@@ -755,8 +767,8 @@ input:checked+.slider:before {
 }
 
 .btn-online {
-    background-color: #28a745;
-    color: white;
+    background-color: var(--verde-tag);
+    color: var(--branco);
     padding: 15px 30px;
     border: none;
     border-radius: 8px;
@@ -766,16 +778,16 @@ input:checked+.slider:before {
 }
 
 .btn-online:hover {
-    background-color: #218838;
+    background-color: var(--verde-tag);
 }
 
 .btn-primary:hover {
-    background-color: #003d80;
+    background-color: var(--azul-hover);
 }
 
 
 .calendar-container {
-    background: #fff;
+    background: var(--branco);
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
@@ -786,15 +798,15 @@ input:checked+.slider:before {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #002855;
-    color: white;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
     border-radius: 8px 8px 0 0;
 }
 
 .calendar-header button {
     background: none;
     border: none;
-    color: white;
+    color: var(--branco);
     font-size: 1.2rem;
     cursor: pointer;
 }
@@ -832,13 +844,13 @@ input:checked+.slider:before {
 }
 
 .calendar-day.selected {
-    background-color: #002855 !important;
-    color: white;
+    background-color: var(--azul-escuro) !important;
+    color: var(--branco);
     font-weight: bold;
 }
 
 .calendar-day.today {
-    border: 2px solid #002855;
+    border: 2px solid var(--azul-escuro);
 }
 
 .calendar-day.empty {
@@ -976,7 +988,7 @@ input:checked+.slider:before {
     border-radius: 16px;
     width: 85%;
     max-width: 350px;
-    /* Tamanho menor e mais delicado */
+    gap: 15px;/* Tamanho menor e mais delicado */
     text-align: center;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', system-ui, sans-serif;
@@ -1019,7 +1031,7 @@ input:checked+.slider:before {
 /* Botões mais arredondados e elegantes */
 .btn-salvar,
 .btn-fechar {
-    background-color: #002855;
+    background-color: var(--azul-escuro);
     border-radius: 20px;
     color: var(--branco);
     /* Botão mais oval */
@@ -1059,7 +1071,7 @@ input:checked+.slider:before {
     width: 100%;
     background: var(--branco);
     border-radius: 12px;
-    box-shadow: 0 4px 12px var(--preto-transparente);
+    box-shadow: 0 4px 12px var(--sombra-card);
     overflow: hidden;
     border: 1px solid var(--cinza-borda);
     transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
@@ -1140,7 +1152,7 @@ input:checked+.slider:before {
 
 /* Estilo comum para os cards dentro do grid */
 .card-topo>div {
-    background: var(--branco, #fff);
+    background: var(--branco);
     border-radius: 12px;
     border: 1px solid var(--cinza-borda, #eee);
     /* Leve sombra solicitada */
@@ -1186,7 +1198,7 @@ input:checked+.slider:before {
     transform: translateY(-50%);
     /* Ajuste fino apenas para o eixo vertical */
 
-    color: white;
+    color: var(--branco);
     /* text-align: right; Garante que o texto dentro do bloco alinhe à direita */
     max-width: 40%;
     /* Evita que o texto ocupe a imagem inteira horizontalmente */
@@ -1289,7 +1301,7 @@ input:checked+.slider:before {
     left: 0;
     right: 0;
     height: 5px; /* Grossura da borda */
-    background: var(--dourado, #ffd700);
+    background: var(--dourado);
 }
 
 .card-activity h4 {
@@ -1328,7 +1340,7 @@ input:checked+.slider:before {
     gap: 20px;
 }
 .grid-rewards>div {
-    background: var(--branco, #fff);
+    background: var(--branco);
     border-radius: 12px;
     border: 1px solid var(--cinza-borda, #eee);
     /* Leve sombra solicitada */
@@ -1351,10 +1363,10 @@ input:checked+.slider:before {
     margin-top: 15px;
     padding: 10px;
     background-color: #e8f5e9;
-    color: #2e7d32;
+    color: var(--verde-tag);
     border-radius: 6px;
     font-size: 0.9rem;
-    border-left: 4px solid #2e7d32;
+    border-left: 4px solid var(--verde-tag);
 }
 
 /* Classe utilitária para esconder elementos */
@@ -1362,3 +1374,43 @@ input:checked+.slider:before {
     display: none;
 }
 
+/* Container que envolve a imagem */
+#weather-visual {
+    width: 400px;           /* Tamanho total da moldura (pode ajustar) */
+    height: 200px;          /* Mantém quadrado */
+    margin: 0 auto 15px;    /* Centraliza na div e dá espaço pro texto abaixo */
+    display: flex;          /* Para centralizar a img dentro */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;       /* Garante que o arredondado corte a img se necessário */
+    background-color: #f8f9fa; /* Um fundo bem clarinho pra dar profundidade */
+    border: 1px solid #e1e8ed; /* Uma borda suave */
+    border-radius: 20px;    /* O arredondamento das pontas! */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Uma sombra leve */
+}
+
+/* Regras para a imagem real */
+#weather-img {
+    width: 100%;            /* A imagem preenche a div-moldura */
+    height: 100%;
+    object-fit: contain;    /* CRÍTICO: Garante que a img mantenha proporção sem distorcer, cortando apenas o excesso se necessário para preencher */
+    transition: all 0.3s ease; /* Transição suave na troca */
+}
+
+/* Estilo para os dias que já passaram (Bloqueados) */
+.calendar-day.past-day {
+    background-color: #f2f2f2; /* Cinza bem clarinho para o fundo */
+    color: #b0b0b0;           /* Texto em cinza fosco */
+    cursor: not-allowed;      /* Muda o mouse para aquele ícone de círculo riscado */
+    opacity: 0.7;             /* Deixa o elemento levemente transparente */
+    pointer-events: none;     /* Garante que nenhum clique seja registrado, por segurança */
+    border: none !important;  /* Remove qualquer borda que possa aparecer */
+}
+
+/* Garante que ao passar o mouse em um dia passado, não haja efeito de destaque */
+.calendar-day.past-day:hover {
+    background-color: #f2f2f2 !important;
+    color: #b0b0b0 !important;
+    transform: none !important; /* Se você tiver animação de zoom, ela será removida aqui */
+    box-shadow: none !important;
+}

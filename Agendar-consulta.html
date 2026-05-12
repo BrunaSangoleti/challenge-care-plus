@@ -16,12 +16,13 @@
 
 <body>
     <nav class="sidebar">
-        <a href="#" class="logo">Care Plus</a>
+        <a href="./index.html" class="logo"><img src="./src/img/logo.png"></a>
         <ul class="sidebar-menu">
             <li><a href="./index.html">Dashboard</a></li>
             <li><a href="./Agendar-consulta.html" class="active"> Agendar consulta</a></li>
             <li><a href="./Agendamento.html"> Meus agendamentos</a></li>
             <li><a href="./Pagina-pontos.html">Meus pontos</a></li>
+            
             <li><a href="./Guia-de-saude.html">Guia de saúde</a></li>
             <li><a href="./Configuracoes.html" ">Configurações</a></li>
     </ul>
@@ -57,7 +58,7 @@
                         <section class="booking-card weather-card">
                             <h3>Previsão do Tempo para <span id="weather-date">25/10/2026</span></h3>
                             <div class="weather-info">
-                                <div id="weather-icon" style="font-size: 3rem;">🌧️</div>
+                                <div id="weather-visual" ><img src="./src/img/chuvoso.png" alt="Clima"  id="weather-img"></div>
                                 <p class="weather-alert" id="weather-text">
                                     <strong>Atenção:</strong> Previsão de <strong>Chuva Intensa</strong> para a data da
                                     sua consulta.
@@ -82,8 +83,8 @@
                             <!-- Especialidade -->
                             <div class="filter-group">
                                 <label>Especialidade</label>
-                                <select class="custom-select">
-                                    <option>[Selecione Especialidade]</option>
+                                <select id="select-especialidade" class="custom-select">
+                                    <option value="" disabled selected>[Selecione Especialidade]</option>
                                     <option>Cardiologia</option>
                                     <option>Clínica Geral</option>
                                     <option>Odontologia</option>
@@ -93,8 +94,8 @@
                             <!-- Doutor -->
                             <div class="filter-group">
                                 <label>Doutor(a)</label>
-                                <select class="custom-select">
-                                    <option>[Selecione Doutor]</option>
+                                <select  id="select-doutor" class="custom-select">
+                                    <option value="" disabled selected>[Selecione Doutor]</option>
                                     <option>Dra. Ana Costa</option>
                                     <option>Dr. Pedro Martins</option>
                                 </select>
@@ -104,7 +105,7 @@
                             <div class="filter-group">
                                 <label>Unidade</label>
                                 <select id="select-unidade" class="custom-select">
-                                    <option value="">[Selecione Unidade]</option>
+                                    <option value="" disabled selected>[Selecione Unidade]</option>
                                     <option value="paulista">Paulista CarePlus</option>
                                     <option value="faria_lima">Faria Lima CarePlus</option>
                                     <option value="itaim">Itaim CarePlus</option>
@@ -114,8 +115,8 @@
                             <!-- Horário -->
                             <div class="filter-group">
                                 <label>Horário Disponível</label>
-                                <select class="custom-select">
-                                    <option>[Selecione Horário]</option>
+                                <select id="select-horario" class="custom-select">
+                                    <option value="" disabled selected>[Selecione Horário]</option>
                                     <option>09:30</option>
                                     <option>10:15</option>
                                     <option>14:00</option>
@@ -137,7 +138,7 @@
             <div class="icon-success">✓</div>
             <h2>Consulta agendada!</h2>
             <p>Deseja adicionar ao calendário? </p>
-            <button onclick="" class="btn-fechar" onclick="abrirGoogleCalendar()">Sim</button>
+            <button type="button" class="btn-fechar" onclick="gerarLinkGoogleCalendar()">Sim</button>
             <button type="button" class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
         </div>
     </div>
