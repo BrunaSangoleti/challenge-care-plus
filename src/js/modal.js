@@ -88,3 +88,38 @@ function fecharRemarcar() {
         modal.style.display = "none";
     }
 }
+
+function abrirGoogleCalendar() {
+    try {
+        const titulo = document.getElementById('titulo').value || "Novo Evento";
+        const dataInput = document.getElementById('dataHora').value;
+
+        if (!dataInput) {
+            alert("Por favor, selecione uma data e hora.");
+            return;
+        }
+
+        // Limpeza da data: de "2026-05-11T14:30" para "20260511T143000"
+        // O Google exige o formato YYYYMMDDTHHMMSS
+        const dataFormatada = dataInput.replace(/[-:]/g, "") + "00";
+        
+        // Definindo o fim do evento para 1 hora depois (opcional)
+        // Para simplificar, usaremos a mesma data (evento pontual)
+        const datas = `${dataFormatada}/${dataFormatada}`;
+
+        const baseUrl = "https://www.google.com/calendar/render?action=TEMPLATE";
+        const urlFinal = `${baseUrl}&text=${encodeURIComponent(titulo)}&dates=${datas}&sf=true&output=xml`;
+
+        // Log para depuração (aperte F12 no navegador para ver se a URL está correta)
+        console.log("Abrindo URL:", urlFinal);
+
+        // Abre em nova aba
+        const novaAba = window.open(urlFinal, '_blank');
+        
+        if (!novaAba) {
+            alert("O navegador bloqueou a abertura da aba. Por favor, permita pop-ups para este site.");
+        }
+    } catch (erro) {
+        console.error("Erro ao tentar abrir o calendário:", erro);
+    }
+}

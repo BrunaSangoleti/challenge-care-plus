@@ -295,7 +295,7 @@ img {
 /* Missões */
 .missions-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
 }
 
@@ -427,9 +427,11 @@ img {
     color: #dc3545;
     /* Vermelho */
 }
-a{
-    text-decoration:none;
+
+a {
+    text-decoration: none;
 }
+
 /* Botão Agendar Agora */
 .btn-schedule-now {
     background-color: #002855;
@@ -521,7 +523,8 @@ a{
     padding: 5px 15px;
     border-radius: 4px;
     font-weight: 600;
-    pointer-events: none; /* Faz o mouse "atravessar" o elemento */
+    pointer-events: none;
+    /* Faz o mouse "atravessar" o elemento */
     cursor: default;
 }
 
@@ -1199,3 +1202,136 @@ input:checked+.slider:before {
     display: flex;
     align-self: flex-end;
 }
+
+.top-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card-stat {
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-stat h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.card-stat .value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--azul-escuro);
+    margin: 10px 0;
+}
+
+.card-stat p {
+    font-size: 0.9rem;
+    color: #000;
+    margin: 5px 0;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--azul-escuro);
+    padding-bottom: 10px;
+}
+
+/* Activities Grid */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.grid-cards>div {
+    background: var(--branco, #fff);
+    border-radius: 12px;
+    border: 1px solid var(--cinza-borda, #eee);
+    /* Leve sombra solicitada */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.grid-cards>div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-activity {
+    position: relative; 
+    overflow: hidden;   
+    background: var(--branco);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--cinza-borda, #eee);
+}
+
+/* Barra dourada superior perfeita */
+.card-activity::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px; /* Grossura da borda */
+    background: var(--dourado, #ffd700);
+}
+
+.card-activity h4 {
+    margin-top: 0;
+}
+
+.card-activity p {
+    font-size: 0.85rem;
+    color: var(--cinza-texto-suave);
+    line-height: 1.4;
+}
+
+.btn-participar {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.btn-participar:hover{
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    opacity: 0.8;
+
+}
+
+/* Rewards Section */
+.grid-rewards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.grid-rewards>div {
+    background: var(--branco, #fff);
+    border-radius: 12px;
+    border: 1px solid var(--cinza-borda, #eee);
+    /* Leve sombra solicitada */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.grid-rewards>div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
