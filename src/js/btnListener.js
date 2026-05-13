@@ -38,3 +38,33 @@ botoesConfirmar.forEach(botao => {
         // normalmente e abrirá seu modal em paralelo.
     });
 });
+
+const botaoLogin = document.getElementById('btn-login');
+if (botaoLogin) {
+    botaoLogin.addEventListener('click', function() {
+        // Busca os valores baseados nos IDs dos campos de input, e não pelo conteúdo da string
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Compara com os dados fictícios
+        if (email === 'joaosilva@email.com' && password === 'joaosilva123') {
+            
+            // Simula um login bem-sucedido
+            alert('Login bem-sucedido!');
+            // Redireciona para a página principal ou dashboard
+            window.location.href = './index.html'; // Substitua pelo caminho correto
+        } else {
+            alert('E-mail ou senha incorretos.');
+        }
+    });
+}
+
+const botaoSair = document.getElementById('btn-sair');
+if (botaoSair) {
+    botaoSair.addEventListener('click', function() {
+        // Simula o processo de logout
+        alert('Você saiu da conta.');
+        // Redireciona para a página de login
+        window.location.href = './login.html'; // Substitua pelo caminho correto
+    });
+}
