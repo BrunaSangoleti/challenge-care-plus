@@ -10,31 +10,27 @@
     <link rel="stylesheet" href="./src/css/style.css">
     <title>Care Plus</title>
 </head>
-<body>
-    <div class="position-fixed w-100 vh-100 top-0 start-0" style="z-index: -1; overflow: hidden;">
-        <img src="./src/img/Hero-banner.png" alt="Imagem de fundo" class="w-100 h-100" style="object-fit: cover; filter: blur(8px); transform: scale(1.1);">
-        <div class="position-absolute w-100 h-100 top-0 start-0" style="background-color: rgba(255, 255, 255, 0.4);"></div>
-    </div>
-
-    <div class="container-fluid d-flex flex-column justify-content-between align-items-center vh-100 py-5">
-        <div class="mt-4 mt-md-5">
-            <h1 class="fw-bold display-2" style="color: var(--azul-escuro); text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);">Care Plus</h1>
+<body style="background-color: var(--cinza-fundo);">
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 py-5">
+        
+        <div class="mb-4 text-center" style="background-color: var(--azul-escuro); padding: 15px 40px; border-radius: 12px; box-shadow: var(--sombra-card);">
+            <img src="./src/img/logo.png" alt="Care Plus Logo" style="max-width: 180px;">
         </div>
 
-        <section class="p-4 shadow-lg rounded border bg-white mb-4 mb-md-5" style="width: 100%; max-width: 400px;">
-                    <h2 class="mb-4 text-center" style="color: var(--azul-escuro);">Acesse sua conta</h2>
-                    <form action="login.php" method="POST">
-                        <div class="mb-3">
-                            <label for="email" class="form-label fw-bold">Email:</label>
-                            <input type="email" class="form-control p-2" id="email" name="email" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="password" class="form-label fw-bold">Senha:</label>
-                            <input type="password" class="form-control p-2" id="password" name="password" required>
-                        </div>
-                        <button type="submit" class="btn w-100 text-white p-2" style="background-color: var(--azul-escuro);">Entrar</button>
-                    </form>
-                </section>
+        <section class="p-4 rounded bg-white" style="width: 100%; max-width: 400px; box-shadow: var(--sombra-card); border: 1px solid var(--cinza-borda);">
+            <h2 class="mb-4 text-center fw-bold" style="color: var(--azul-escuro); font-size: 1.5rem;">Acesse sua conta</h2>
+            <form action="login.php" method="POST">
+                <div class="custom-form-group mb-3">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="custom-form-group mb-4">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit" class="btn-confirm w-100 py-2 rounded fw-bold" style="border: none; font-size: 1rem;">Entrar</button>
+            </form>
+        </section>
     </div>
 </body>
 </html>
