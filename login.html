@@ -10,27 +10,30 @@
     <link rel="stylesheet" href="./src/css/style.css">
     <title>Care Plus</title>
 </head>
-<body style="background-color: var(--cinza-fundo);">
+<body>
     <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100 py-5">
         
-        <div class="mb-4 text-center" style="background-color: var(--azul-escuro); padding: 15px 40px; border-radius: 12px; box-shadow: var(--sombra-card);">
+        <div class="care-plus-logo mb-4 text-center">
             <img src="./src/img/logo.png" alt="Care Plus Logo" style="max-width: 180px;">
         </div>
 
-        <section class="p-4 rounded bg-white" style="width: 100%; max-width: 400px; box-shadow: var(--sombra-card); border: 1px solid var(--cinza-borda);">
-            <h2 class="mb-4 text-center fw-bold" style="color: var(--azul-escuro); font-size: 1.5rem;">Acesse sua conta</h2>
-            <form action="login.php" method="POST">
+        <section class="card-login p-4 rounded bg-white">
+            <h2 class="mb-4 text-center fw-bold">Acesse sua conta</h2>
+            <form id="form-login">
                 <div class="custom-form-group mb-3">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    <input type="email" id="email" name="email" value="joaosilva@email.com" required>
                 </div>
                 <div class="custom-form-group mb-4">
                     <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                    <input type="password" id="password" name="password" value="joaosilva123" required>
                 </div>
-                <button type="submit" class="btn-confirm w-100 py-2 rounded fw-bold" style="border: none; font-size: 1rem;">Entrar</button>
+                <div class="action-buttons">
+                    <button type="button" id="btn-login" class="btn-login w-100 py-2 rounded fw-bold">Entrar</button>
+                </div>
             </form>
         </section>
     </div>
+    <script src="./src/js/btnListener.js"></script>
 </body>
 </html>
