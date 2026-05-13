@@ -1,69 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./src/css/style.css">
     <title>Care Plus</title>
 </head>
+
 <body>
-      <nav class="sidebar"> 
-    <a href="#" class="logo">Care Plus</a>
-    <ul class="sidebar-menu">
-        <li><a href="./index.html">Dashboard</a></li>
-         <li><a href="./Agendar-consulta.html"> Agendar consulta</a></li>
-        <li><a href="./Agendamento.html" >Meus agendamentos</a></li>
-        <li><a href="./Pagina-pontos.html"class="active">Meus pontos</a></li>
-        <li><a href="">Programas</a></li>
-        <li><a href="./Guia-de-saude.html">Guia de saúde</a></li>
-        <li><a href="./Configuracoes.html" >Configurações</a></li>
-    </ul>
-</nav>
+    <nav class="sidebar">
+        <a href="./index.html" class="logo"><img src="./src/img/logo.png"></a>
+        <ul class="sidebar-menu">
+            <li><a href="./index.html">Dashboard</a></li>
+            <li><a href="./Agendar-consulta.html"> Agendar consulta</a></li>
+            <li><a href="./Agendamento.html">Meus agendamentos</a></li>
+            <li><a href="./Pagina-pontos.html" class="active">Meus pontos</a></li>
+            <li><a href="./Guia-de-saude.html">Guia de saúde</a></li>
+            <li><a href="./Configuracoes.html">Configurações</a></li>
+        </ul>
+    </nav>
 
-<main class="content">
-    <h1 class="page-title">Engajamento e Pontos</h1>
-    <div class="title-underline"></div>
+    <main class="content">
+        <h1 class="page-title">Meus pontos e benefícios</h1>
+        <div class="title-underline"></div>
 
-    <div class="points-dashboard">
-        <!-- Lado Esquerdo: Saldo e Missões -->
-        <div class="points-info">
-            
-            <!-- Card de Saldo Atual -->
-            <div class="balance-card">
-                <p class="balance-label">Seu Saldo Atual</p>
-                <h2 class="balance-value">2.850 pts</h2>
-                <p class="balance-footer">Troque seus pontos por benefícios em nossa rede parceira!</p>
-            </div>
-
-            <!-- Missões (Cards menores) -->
-            <div class="missions-container">
-                <div class="mission-card">
-                    <div class="mission-accent gold"></div>
-                    <h3>Vida Ativa</h3>
-                    <p>Caminhe 10km na semana e ganhe 500 pontos.</p>
-                    <button class="btn-participate">Participar</button>
+        <main>
+            <div class="top-cards">
+                <div class="card-stat">
+                    <h3>Sua Pontuação</h3>
+                    <div class="value">2.850 pts</div>
+                    <p><strong>Seu Saldo Atual</strong></p>
+                    <p>Troque seus pontos por benefícios exclusivos!</p>
                 </div>
-
-                <div class="mission-card">
-                    <div class="mission-accent gold"></div>
-                    <h3>Mente Sã</h3>
-                    <p>Complete 5 sessões de meditação guiada.</p>
-                    <button class="btn-participate">Participar</button>
+                <div class="card-stat">
+                    <h3>Seu Ranking Pessoal</h3>
+                    <div class="value">Top 10%</div>
+                    <p>Parabéns! Você está entre os 10% mais ativos.</p>
                 </div>
             </div>
-        </div>
 
-        <!-- Lado Direito: Espaço da Mascote Bibi -->
-        <!-- Lado Direito: Espaço da Mascote Bibi -->
-<div class="bibi-section">
-    <div class="bibi-container">
-        <!-- Substitua o 'src' pelo caminho da sua imagem da Bibi -->
-        <img src="./src/img/bibi.png" alt="Mascote Bibi" class="bibi-img">
-    </div>
-</div>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+            <h2 class="section-title">Acumule + pontos</h2>
+            <div class="grid-cards">
+                <div class="card-activity">
+                    <div>
+                        <h4>Corrida com 4any1</h4>
+                        <p>Participe de um treino presencial com a assessoria 4any1 e registre sua presença. Ganhe +400
+                            pontos.</p>
+                    </div>
+                    <button class="btn-participar">Participar</button>
+                    <p class="mensagem-sucesso hidden">
+                        ✓ Inscrição realizada com sucesso! Siga os passos enviados para seu e-mail.
+                    </p>
+                </div>
+                <div class="card-activity">
+                    <div>
+                        <h4>Check-up em Dia</h4>
+                        <p>Realize seus exames preventivos anuais na rede credenciada Care Plus. Ganhe +1000 pontos.</p>
+                    </div>
+                    <button class="btn-participar">Participar</button>
+                    <p class="mensagem-sucesso hidden">
+                        ✓ Inscrição realizada com sucesso! Siga os passos enviados para seu e-mail.
+                    </p>
+                </div>
+                <div class="card-activity">
+                    <div>
+                        <h4>Workshop de Nutrição</h4>
+                        <p>Assista a uma live exclusiva sobre alimentação funcional com nossos nutricionistas. Ganhe
+                            +200ptos</p>
+                    </div>
+                    <button class="btn-participar">Participar</button>
+                    <p class="mensagem-sucesso hidden">
+                        ✓ Inscrição realizada com sucesso! Siga os passos enviados para seu e-mail.
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="section-title">Clube de Vantagens</h2>
+            <div class="grid-rewards">
+                <div class="card-activity">
+                    <div>
+                        <h4>Turbine sua Farmácia</h4>
+                        <p>Adicione 10% de desconto extra (além do convênio) em itens de higiene na Droga Raia. Custo
+                            1500 pontos.</p>
+                    </div>
+                    <button class="btn-participar">Participar</button>
+                    <p class="mensagem-sucesso hidden">
+                        ✓ Inscrição realizada com sucesso! Siga os passos enviados para seu e-mail.
+                    </p>
+                </div>
+                <div class="card-activity">
+                    <div>
+                        <h4>Voucher Pronto Light</h4>
+                        <p>Troque seus pontos por um cupom de 20% de desconto em marmitas fitness. Custo 2500 pts.</p>
+                    </div>
+                    <button class="btn-participar">Participar</button>
+                    <p class="mensagem-sucesso hidden">
+                        ✓ Inscrição realizada com sucesso! Siga os passos enviados para seu e-mail.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+
+    </main>
+    <script src="./src/js/btnListener.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

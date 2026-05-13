@@ -1,90 +1,273 @@
 :root {
+    /* Cores Principais */
     --azul-escuro: #002855;
+    --azul-hover: #003d80;
     --azul-tag: #007bff;
     --verde-tag: #28a745;
-    --cinza-fundo: #f4f7f9;
+    --verde-hover: #218838;
     --dourado: #FFD700;
+    --vermelho-danger: #dc3545;
+
+    /* Tons de Fundo e Texto */
+    --cinza-fundo: #f4f7f9;
+    --cinza-claro: #f8f9fa;
+    --cinza-borda: #eee;
+    --cinza-texto-suave: #6c757d;
+    --cinza-texto-escuro:#666;
+    --branco: #ffffff;
+
+    /* Sombras e Transparências */
+    --sombra-leve: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --sombra-card: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
 
-body { display: flex; background-color: var(--cinza-fundo); min-height: 100vh; flex-direction: row; }
-img { max-width: 100%; height: auto; }
+body {
+    display: flex;
+    background-color: var(--cinza-fundo);
+    min-height: 100vh;
+    flex-direction: row;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 /* SIDEBAR */
 .sidebar {
     width: 260px;
     background-color: var(--azul-escuro);
-    color: white;
+    color: var(--branco);
     padding: 30px 20px;
     height: 100vh;
     position: fixed;
 }
 
-.sidebar .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--dourado);
-    text-decoration: none;
-    display: block;
-    margin-bottom: 40px;
+
+.sidebar-menu {
+    list-style: none;
 }
 
-.sidebar-menu { list-style: none; }
 .sidebar-menu a {
-    color: white;
+    color: var(--branco);
     text-decoration: none;
     display: block;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9rem;
 }
 
-.sidebar-menu a.active { color: var(--dourado); font-weight: 700; }
+.sidebar-menu a.active {
+    color: var(--dourado);
+    font-weight: 700;
+}
 
 /* CONTENT AREA */
-.content { margin-left: 260px; padding: 40px; width: calc(100% - 260px); }
+.logo {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;      /* Se for texto */
+    color: var(--branco);
+    text-align: center;
+}
 
-.page-title { color: var(--azul-escuro); font-size: 2rem; margin-bottom: 10px; }
-.title-underline { height: 3px; background: var(--azul-escuro); width: 100%; margin-bottom: 30px; }
+/* Se você estiver usando uma IMAGEM para a logo */
+.logo img {
+    width: 100%;          /* Ela tenta preencher o container... */
+    max-width: 160px;     /* ...mas para exatamente em 160px (tamanho ideal) */
+    height: auto;         /* ISSO evita que a imagem estique ou achate */
+    object-fit: contain;  /* Garante que a imagem caiba sem cortes */
+    display: block;
+    margin: 0 auto;       /* Centraliza na sidebar */
+}
+.content {
+    margin-left: 260px;
+    padding: 40px;
+    width: calc(100% - 260px);
+}
+
+.page-title {
+    color: var(--azul-escuro);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.title-underline {
+    height: 3px;
+    background: var(--azul-escuro);
+    width: 100%;
+    margin-bottom: 30px;
+}
 
 /* CARDS PROXIMITY */
-.cards-container { display: flex; flex-direction: column; gap: 0px; } /* Gap 0 para ficarem colados */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    /* Mantém os cards um abaixo do outro */
+    align-items: center;
+    /* Centraliza os itens horizontalmente */
+    width: 100%;
+    /* Garante que o container use a largura total */
+    padding: 20px;
+    /* Espaçamento para não encostar nas bordas da tela */
+}
+
+/* Gap 0 para ficarem colados */
 
 .appointment-card {
-    background: white;
+    background: var(--branco);
     padding: 20px;
-    border-radius: 8px 8px 0 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     max-width: 900px;
+    /* Define um limite de largura para o card */
     width: 100%;
+    /* Faz ele ser responsivo até atingir o max-width */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Mantendo suas bordas arredondadas originais */
+    border-radius: 8px 8px 0 0;
 }
 
 .appointment-card.no-title {
     border-radius: 0 0 8px 8px;
+    /* Mantém o efeito de "colado" no de cima */
     border-top: 1px solid #eee;
 }
 
-.card-subtitle { color: var(--azul-escuro); font-size: 1.1rem; margin-bottom: 20px; }
+.card-subtitle {
+    color: var(--azul-escuro);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
 
 /* TABLE STYLES */
-.appointment-table { width: 100%; border-collapse: collapse; }
-.table-header th { text-align: left; padding: 10px; color: #666; font-size: 0.8rem; border-bottom: 1px solid #eee; }
-.table-row td { padding: 15px 10px; border-bottom: 1px solid #f9f9f9; font-size: 0.9rem; }
+.appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-.specialty-info strong { display: block; }
-.specialty-info span { font-size: 0.8rem; color: #777; }
+.table-header th {
+    text-align: left;
+    padding: 10px;
+    color: var(--cinza-texto-escuro);
+    font-size: 0.8rem;
+    border-bottom: 1px solid #eee;
+}
+
+.table-row td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #f9f9f9;
+    font-size: 0.9rem;
+}
+
+.specialty-info strong {
+    display: block;
+}
+
+.specialty-info span {
+    font-size: 0.8rem;
+    color: #777;
+}
 
 /* BUTTONS */
-.map-buttons { display: flex; gap: 5px; margin-top: 5px; }
-.btn-tag { padding: 3px 8px; border-radius: 4px; color: white; font-size: 0.7rem; text-decoration: none; }
-.btn-maps { background: var(--verde-tag); }
-.btn-waze { background: var(--azul-tag); }
+.map-buttons {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
 
-.action-buttons { display: flex; flex-direction: column; gap: 5px; }
-.btn-action { padding: 6px; border-radius: 4px; border: 1px solid var(--azul-escuro); font-weight: 600; cursor: pointer; font-size: 0.75rem; }
-.btn-confirm { background: var(--azul-escuro); color: white; }
-.btn-reschedule { background: white; color: var(--azul-escuro); }
+.btn-tag {
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: var(--branco);
+    font-size: 0.7rem;
+    text-decoration: none;
+}
+
+/* Suas classes atuais (ajustadas) */
+.btn-maps {
+    background: var(--verde-tag);
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-waze {
+    background: var(--azul-tag);
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+/* O QUE ESTAVA FALTANDO: O gatilho do mouse */
+.btn-maps:hover,
+.btn-waze:hover {
+    opacity: 0.7;
+    /* Aqui você define o nível de translucidez */
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btn-action {
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid var(--azul-escuro);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.btn-confirm {
+    background: var(--azul-escuro);
+    border-color: var(--azul-escuro);
+    color: var(--branco);
+    transition: opacity 0.3s ease;
+    /* Adicionado */
+    cursor: pointer;
+
+}
+
+
+.btn-confirm:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    /* Garante que o cursor de "mãozinha" apareça */
+    transition: opacity 0.3s ease;
+    border-color: var(--azul-escuro);
+
+}
+.btn-confirm.confirmado {
+    background-color: #f0fdf4 !important; /* Verde bem claro de fundo */
+    color: var(--azul-tag) !important;           /* Verde escuro para o texto */
+    border: 1px solid var(--azul-tag) !important;
+    cursor: default;
+    pointer-events: none; /* Garante que o usuário não consiga clicar mais */
+}
+
+.btn-reschedule {
+    background: var(--branco);
+    color: var(--azul-escuro);
+    transition: opacity 0.3s ease;
+    /* Adicionado */
+    cursor: pointer;
+    /* Adicionado */
+}
+
+.btn-reschedule:hover {
+    background-color: var(--azul-hover);
+    color: var(--branco);
+    border-color: var(--azul-hover);
+    opacity: 0.7;
+}
 
 .points-dashboard {
     display: flex;
@@ -110,36 +293,36 @@ img { max-width: 100%; height: auto; }
 }
 
 .balance-label {
-    color: #003366;
+    color: var(--azul-escuro);
     font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 10px;
 }
 
 .balance-value {
-    color: #002855;
+    color: var(--azul-escuro);
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 .balance-footer {
-    color: #6c757d;
+    color: var(--cinza-texto-suave);
     font-size: 0.85rem;
 }
 
 /* Missões */
 .missions-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
 }
 
 .mission-card {
-    background: white;
+    background: var(--branco);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
 }
@@ -151,24 +334,24 @@ img { max-width: 100%; height: auto; }
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: #FFD700;
+    background-color: var(--dourado);
 }
 
 .mission-card h3 {
-    color: #003366;
+    color: var(--azul-escuro);
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
 .mission-card p {
-    color: #444;
+    color: var(--cinza-texto-suave);
     font-size: 0.9rem;
     margin-bottom: 15px;
 }
 
 .btn-participate {
-    background-color: #002855;
-    color: white;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
     border: none;
     padding: 8px 20px;
     border-radius: 4px;
@@ -192,7 +375,7 @@ img { max-width: 100%; height: auto; }
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
+    color: var(--cinza-texto-escuro);
     font-size: 0.8rem;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.5);
@@ -201,15 +384,15 @@ img { max-width: 100%; height: auto; }
 
 /* Container do Card de Prevenção */
 .prevention-card {
-    background: white;
+    background: var(--branco);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     max-width: 900px;
 }
 
 .card-subtitle {
-    color: #003366;
+    color: var(--azul-escuro);
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 25px;
@@ -228,7 +411,7 @@ img { max-width: 100%; height: auto; }
 
 .table-header th {
     padding: 12px 15px;
-    color: #6c757d;
+    color: var(--cinza-texto-escuro);
     font-size: 0.85rem;
     font-weight: 600;
     border-bottom: 1px solid #dee2e6;
@@ -254,18 +437,24 @@ img { max-width: 100%; height: auto; }
 
 .status-on-time {
     background-color: #d4edda;
-    color: #28a745; /* Verde */
+    color: var(--verde-tag);
+    /* Verde */
 }
 
 .status-late {
     background-color: #f8d7da;
-    color: #dc3545; /* Vermelho */
+    color: var(--vermelho-danger);
+    /* Vermelho */
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Botão Agendar Agora */
 .btn-schedule-now {
-    background-color: #002855;
-    color: white;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
     border: none;
     padding: 8px 18px;
     border-radius: 4px;
@@ -276,7 +465,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .btn-schedule-now:hover {
-    background-color: #003d80;
+    background-color: var(--azul-hover);
 }
 
 
@@ -289,10 +478,10 @@ img { max-width: 100%; height: auto; }
 }
 
 .settings-card {
-    background: white;
+    background: var(--branco);
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     margin-bottom: 25px;
 }
 
@@ -305,8 +494,18 @@ img { max-width: 100%; height: auto; }
 }
 
 /* CAMPOS DE ENTRADA */
-.custom-form-group { margin-bottom: 15px; }
-.custom-form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: #555; margin-bottom: 5px; }
+.custom-form-group {
+    margin-bottom: 15px;
+}
+
+.custom-form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--cinza-texto-suave);
+    margin-bottom: 5px;
+}
+
 .custom-form-group input {
     width: 100%;
     padding: 10px;
@@ -316,22 +515,68 @@ img { max-width: 100%; height: auto; }
     font-size: 0.9rem;
 }
 
-.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.editable-input { position: relative; }
-.edit-icon { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #002855; cursor: pointer; }
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.editable-input {
+    position: relative;
+}
+
+.edit-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--azul-escuro);
+    cursor: pointer;
+}
 
 /* BOTÕES ESPECÍFICOS */
-.btn-green { background: #28a745; color: white; border: none; padding: 5px 15px; border-radius: 4px; font-weight: 600; cursor: pointer; }
-.btn-text { background: none; border: none; color: #002855; font-weight: 700; text-decoration: underline; cursor: pointer; font-size: 0.85rem; }
-.btn-danger { background: #d9534f; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: 700; cursor: pointer; }
-.full-width { width: 100%; }
+.btn-green {
+    background: var(--verde-tag);
+    color: var(--branco);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+    pointer-events: none;
+    /* Faz o mouse "atravessar" o elemento */
+    cursor: default;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--azul-escuro);
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.btn-danger {
+    background: var(--vermelho-danger);
+    color: var(--branco);
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.full-width {
+    width: 100%;
+}
 
 /* CARTEIRINHA DIGITAL */
 .digital-card-preview {
-    background: linear-gradient(135deg, #002855 0%, #004080 100%);
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-hover) 100%);
     border-radius: 10px;
     padding: 20px;
-    color: white;
+    color: var(--branco);
     position: relative;
     margin-top: 15px;
     display: flex;
@@ -339,16 +584,64 @@ img { max-width: 100%; height: auto; }
     align-items: center;
 }
 
-.card-brand { font-weight: 700; font-size: 0.9rem; }
-.card-qr img { width: 60px; height: 60px; background: white; padding: 3px; border-radius: 4px; }
+.card-brand {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.card-qr img {
+    width: 60px;
+    height: 60px;
+    background: var(--branco);
+    padding: 3px;
+    border-radius: 4px;
+}
 
 /* SWITCH (TOGGLE) */
-.switch { position: relative; display: inline-block; width: 44px; height: 22px; }
-.switch input { opacity: 0; width: 0; height: 0; }
-.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
-.slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
-input:checked + .slider { background-color: #28a745; }
-input:checked + .slider:before { transform: translateX(22px); }
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--cinza-fundo);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--branco);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--verde-tag);
+}
+
+input:checked+.slider:before {
+    transform: translateX(22px);
+}
 
 /* Container da Mascote */
 .bibi-section {
@@ -360,11 +653,13 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 
 .bibi-container {
-    width: 280px;  /* Tamanho fixo no desktop */
+    width: 280px;
+    /* Tamanho fixo no desktop */
     height: 280px;
     border-radius: 50%;
-    overflow: hidden; /* Corta o que sobrar da imagem para ficar circular */
-    border: 4px solid #ffffff;
+    overflow: hidden;
+    /* Corta o que sobrar da imagem para ficar circular */
+    border: 4px solid var(--branco);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     background-color: #f8f9fa;
     display: flex;
@@ -376,8 +671,10 @@ input:checked + .slider:before { transform: translateX(22px); }
 .bibi-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Faz a imagem preencher o círculo sem esticar ou achatar */
-    object-position: center; /* Mantém o foco no centro da imagem */
+    object-fit: cover;
+    /* Faz a imagem preencher o círculo sem esticar ou achatar */
+    object-position: center;
+    /* Mantém o foco no centro da imagem */
     display: block;
 }
 
@@ -391,15 +688,15 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 
 .booking-card {
-    background: white;
+    background: var(--branco);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     border: 1px solid #eee;
 }
 
 .booking-card h3 {
-    color: #003366;
+    color: var(--azul-escuro);
     font-size: 1rem;
     margin-bottom: 15px;
     font-weight: 700;
@@ -412,14 +709,14 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 
 .weather-alert {
-    color: #cc0000;
+    color: var(--vermelho-danger);
     font-size: 0.9rem;
     margin: 10px 0;
 }
 
 .weather-tip {
     font-size: 0.75rem;
-    color: #555;
+    color: var(--cinza-texto-suave);
     font-style: italic;
 }
 
@@ -445,7 +742,7 @@ input:checked + .slider:before { transform: translateX(22px); }
     border-radius: 6px;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
-    color: #444;
+    color: var(--cinza-texto-escuro);
 }
 
 /* Botões de Agendamento */
@@ -459,8 +756,8 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 
 .btn-primary {
-    background-color: #002855;
-    color: white;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
     padding: 15px 30px;
     border: none;
     border-radius: 8px;
@@ -470,8 +767,8 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 
 .btn-online {
-    background-color: #28a745;
-    color: white;
+    background-color: var(--verde-tag);
+    color: var(--branco);
     padding: 15px 30px;
     border: none;
     border-radius: 8px;
@@ -480,12 +777,17 @@ input:checked + .slider:before { transform: translateX(22px); }
     transition: 0.3s;
 }
 
-.btn-online:hover { background-color: #218838; }
-.btn-primary:hover { background-color: #003d80; }
+.btn-online:hover {
+    background-color: var(--verde-tag);
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-hover);
+}
 
 
 .calendar-container {
-    background: #fff;
+    background: var(--branco);
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
@@ -496,15 +798,15 @@ input:checked + .slider:before { transform: translateX(22px); }
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #002855;
-    color: white;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
     border-radius: 8px 8px 0 0;
 }
 
 .calendar-header button {
     background: none;
     border: none;
-    color: white;
+    color: var(--branco);
     font-size: 1.2rem;
     cursor: pointer;
 }
@@ -542,13 +844,13 @@ input:checked + .slider:before { transform: translateX(22px); }
 }
 
 .calendar-day.selected {
-    background-color: #002855 !important;
-    color: white;
+    background-color: var(--azul-escuro) !important;
+    color: var(--branco);
     font-weight: bold;
 }
 
 .calendar-day.today {
-    border: 2px solid #002855;
+    border: 2px solid var(--azul-escuro);
 }
 
 .calendar-day.empty {
@@ -560,33 +862,555 @@ input:checked + .slider:before { transform: translateX(22px); }
 /* ========================================= */
 
 @media (max-width: 1100px) {
-    .booking-top-grid, .filters-grid { grid-template-columns: 1fr; }
-    .booking-actions { flex-direction: column; }
+
+    .booking-top-grid,
+    .filters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-actions {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 1024px) {
-    .settings-grid { grid-template-columns: 1fr; }
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    body { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; position: relative; padding: 20px; }
-    .sidebar-menu { display: flex; flex-wrap: wrap; gap: 10px; }
-    .sidebar-menu a { border: none; padding: 5px 10px; background: rgba(255,255,255,0.1); border-radius: 4px; }
-    .content { margin-left: 0; padding: 20px; width: 100%; }
-    
-    .appointment-table thead { display: none; }
-    .table-row { display: flex; flex-direction: column; border-bottom: 2px solid #eee; }
-    
-    .points-dashboard { flex-direction: column-reverse; align-items: center; }
-    .bibi-container { width: 180px; height: 180px; }
-    .bibi-section { order: -1; margin-bottom: 20px; }
-    
-    .input-row { grid-template-columns: 1fr; }
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+    }
+
+    .sidebar-menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .sidebar-menu a {
+        border: none;
+        padding: 5px 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .appointment-table thead {
+        display: none;
+    }
+
+    .table-row {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid #eee;
+    }
+
+    .points-dashboard {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .bibi-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .bibi-section {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .input-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 600px) {
-    .history-table thead { display: none; }
-    .table-row { display: flex; flex-direction: column; gap: 10px; padding: 15px 0; }
-    .table-row td { padding: 5px 15px; border: none; }
+    .history-table thead {
+        display: none;
+    }
+
+    .table-row {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 0;
+    }
+
+    .table-row td {
+        padding: 5px 15px;
+        border: none;
+    }
+}
+
+/* Fundo do Modal - Agora com Flexbox para centralizar */
+.modal {
+    display: none;
+    /* Mantém fechado inicialmente */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+
+    /* Estas propriedades só funcionam se o display for 'flex' */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adicione esta classe para facilitar o controle via JS */
+.modal.active {
+    display: flex;
+}
+
+/* Caixa do Modal - Tamanho reduzido e animação */
+.modal-content {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    width: 85%;
+    max-width: 350px;
+    gap: 15px;/* Tamanho menor e mais delicado */
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+
+    /* Animação delicada */
+    animation: aparecerSuave 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Definição da animação: surge de baixo e aumenta levemente a escala */
+@keyframes aparecerSuave {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Ajuste nos inputs para manter a delicadeza */
+.input-minimalista {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.input-minimalista:focus {
+    outline: none;
+    border-color: #333;
+    background-color: #fff;
+}
+
+/* Botões mais arredondados e elegantes */
+.btn-salvar,
+.btn-fechar {
+    background-color: var(--azul-escuro);
+    border-radius: 20px;
+    color: var(--branco);
+    /* Botão mais oval */
+    padding: 10px 20px;
+    font-size: 0.85rem;
+
+}
+
+.btn-cancelar {
+    background-color: var(--cinza-texto-suave);
+    border-radius: 20px;
+    color: var(--branco);
+    /* Botão mais oval */
+    padding: 10px 20px;
+    font-size: 0.85rem;
+}
+
+.btn-salvar:hover,
+.btn-cancelar {
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* 1. Garante que a coluna ocupe a altura total da linha */
+.col-lg-4 {
+    display: flex;
+    align-items: stretch;
+    /* Faz o card esticar para ocupar a altura da linha */
+}
+
+/* 2. Configuração do Card */
+.card {
+    display: flex;
+    flex-direction: column;
+    /* Organiza o conteúdo em coluna */
+    width: 100%;
+    background: var(--branco);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--sombra-card);
+    overflow: hidden;
+    border: 1px solid var(--cinza-borda);
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Sombra leve ao redor */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    /* A leve saltada */
+    opacity: 0.9;
+    /* Fica levemente translúcido */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    /* Sombra aumenta ao subir */
+}
+
+
+
+/* 4. Interação direta no Botão */
+.btn-action:hover {
+    opacity: 1 !important;
+    /* Volta ao normal ao focar diretamente no botão */
+    filter: brightness(1.1);
+    /* Dá um leve brilho para feedback visual */
+}
+
+/* 3. Imagem com tamanho fixo para não quebrar o layout */
+.card img {
+    width: 100%;
+    height: 200px;
+    /* Altura fixa para manter a simetria */
+    object-fit: cover;
+    /* Corta a imagem sem distorcer para preencher o espaço */
+}
+
+/* 4. Corpo do Card (O segredo do alinhamento) */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Faz o corpo ocupar todo o espaço restante */
+    padding: 20px;
+}
+
+/* 5. Texto do card */
+.card-text {
+    flex-grow: 1;
+    /* Empurra os botões para a parte inferior se o texto for curto */
+    margin-bottom: 20px;
+}
+
+/* 6. Botões sempre no rodapé */
+.action-buttons {
+    margin-top: auto;
+    /* Garante que o botão fique sempre no final do card */
+    width: 100%;
+}
+
+
+
+
+.container-topo {
+    display: grid;
+    /* Divide o espaço em 3 partes exatamente iguais */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* Espaçamento entre os cards */
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.card-topo {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo comum para os cards dentro do grid */
+.card-topo>div {
+    background: var(--branco);
+    border-radius: 12px;
+    border: 1px solid var(--cinza-borda, #eee);
+    /* Leve sombra solicitada */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card-topo>div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade: Em telas menores, os cards ficam um abaixo do outro */
+@media (max-width: 992px) {
+    .container-topo {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container-imagem {
+    position: relative;
+    /* O pai precisa ser relativo */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.container-imagem img {
+    width: 100%;
+    display: flex;
+    border-radius: 7px;
+
+}
+
+.texto-sobreposto {
+    position: absolute;
+    /* O texto flutua sobre o pai */
+    top: 50%;
+    /* Mantém centralizado verticalmente */
+    right: 5%;
+    /* Alinha à direita com uma pequena margem da borda */
+    transform: translateY(-50%);
+    /* Ajuste fino apenas para o eixo vertical */
+
+    color: var(--branco);
+    /* text-align: right; Garante que o texto dentro do bloco alinhe à direita */
+    max-width: 40%;
+    /* Evita que o texto ocupe a imagem inteira horizontalmente */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.mascote-guia {
+    max-width: 26%;
+    /* Regra de ouro: nunca maior que o container */
+    height: auto;
+    /* Mantém a proporção original (não achata) */
+    display: block;
+}
+
+.mascote-pontos {
+    max-width: 26%;
+    /* Regra de ouro: nunca maior que o container */
+    height: auto;
+    /* Mantém a proporção original (não achata) */
+    display: flex;
+    align-self: flex-end;
+}
+
+.top-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card-stat {
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-stat h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.card-stat .value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--azul-escuro);
+    margin: 10px 0;
+}
+
+.card-stat p {
+    font-size: 0.9rem;
+    color: #000;
+    margin: 5px 0;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--azul-escuro);
+    padding-bottom: 10px;
+}
+
+/* Activities Grid */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.grid-cards>div {
+    background: var(--branco, #fff);
+    border-radius: 12px;
+    border: 1px solid var(--cinza-borda, #eee);
+    /* Leve sombra solicitada */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.grid-cards>div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-activity {
+    position: relative; 
+    overflow: hidden;   
+    background: var(--branco);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--cinza-borda, #eee);
+}
+
+/* Barra dourada superior perfeita */
+.card-activity::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px; /* Grossura da borda */
+    background: var(--dourado);
+}
+
+.card-activity h4 {
+    margin-top: 0;
+}
+
+.card-activity p {
+    font-size: 0.85rem;
+    color: var(--cinza-texto-suave);
+    line-height: 1.4;
+}
+
+.btn-participar {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.btn-participar:hover{
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    opacity: 0.8;
+
+}
+
+/* Rewards Section */
+.grid-rewards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.grid-rewards>div {
+    background: var(--branco);
+    border-radius: 12px;
+    border: 1px solid var(--cinza-borda, #eee);
+    /* Leve sombra solicitada */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.grid-rewards>div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.btn-participar.participando {
+    background-color: #e8f5e9;
+    color: var(--azul-tag);
+    border: 1px solid var(--azul-tag);
+    cursor: default;
+}
+
+.mensagem-sucesso {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    color: var(--verde-tag);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    border-left: 4px solid var(--verde-tag);
+}
+
+/* Classe utilitária para esconder elementos */
+.hidden {
+    display: none;
+}
+
+/* Container que envolve a imagem */
+#weather-visual {
+    width: 400px;           /* Tamanho total da moldura (pode ajustar) */
+    height: 200px;          /* Mantém quadrado */
+    margin: 0 auto 15px;    /* Centraliza na div e dá espaço pro texto abaixo */
+    display: flex;          /* Para centralizar a img dentro */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;       /* Garante que o arredondado corte a img se necessário */
+    background-color: #f8f9fa; /* Um fundo bem clarinho pra dar profundidade */
+    border: 1px solid #e1e8ed; /* Uma borda suave */
+    border-radius: 20px;    /* O arredondamento das pontas! */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Uma sombra leve */
+}
+
+/* Regras para a imagem real */
+#weather-img {
+    width: 100%;            /* A imagem preenche a div-moldura */
+    height: 100%;
+    object-fit: contain;    /* CRÍTICO: Garante que a img mantenha proporção sem distorcer, cortando apenas o excesso se necessário para preencher */
+    transition: all 0.3s ease; /* Transição suave na troca */
+}
+
+/* Estilo para os dias que já passaram (Bloqueados) */
+.calendar-day.past-day {
+    background-color: #f2f2f2; /* Cinza bem clarinho para o fundo */
+    color: #b0b0b0;           /* Texto em cinza fosco */
+    cursor: not-allowed;      /* Muda o mouse para aquele ícone de círculo riscado */
+    opacity: 0.7;             /* Deixa o elemento levemente transparente */
+    pointer-events: none;     /* Garante que nenhum clique seja registrado, por segurança */
+    border: none !important;  /* Remove qualquer borda que possa aparecer */
+}
+
+/* Garante que ao passar o mouse em um dia passado, não haja efeito de destaque */
+.calendar-day.past-day:hover {
+    background-color: #f2f2f2 !important;
+    color: #b0b0b0 !important;
+    transform: none !important; /* Se você tiver animação de zoom, ela será removida aqui */
+    box-shadow: none !important;
 }
