@@ -1414,3 +1414,29 @@ input:checked+.slider:before {
     transform: none !important; /* Se você tiver animação de zoom, ela será removida aqui */
     box-shadow: none !important;
 }
+
+.care-plus-logo {
+    background-color: var(--azul-escuro);
+    padding: 15px 40px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+}
+
+.card-login {
+    width: 100%;
+    max-width: 400px;
+    box-shadow: var(--sombra-card);
+    border: 1px solid var(--cinza-borda);
+}
+
+.card-login h2 {
+    color: var(--azul-escuro);
+    font-size: 1.5rem;
+}
+
+.btn-login {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    border: none;
+    font-size: 1rem;
+}
