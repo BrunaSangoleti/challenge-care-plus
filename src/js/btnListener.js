@@ -39,6 +39,56 @@ botoesConfirmar.forEach(botao => {
     });
 });
 
+// Função para criar e exibir um modal dinamicamente na tela
+function mostrarModalMensagem(titulo, mensagem, urlDestino, isErro = false) {
+    // Cria o fundo do modal
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.style.display = 'flex'; // Exibe o modal
+
+    // Cria o container interno do modal
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+
+    // Cria o ícone (✓ para sucesso, ✕ para erro)
+    const icon = document.createElement('div');
+    icon.innerHTML = isErro ? '✕' : '✓';
+    icon.style.fontSize = '3rem';
+    icon.style.color = isErro ? 'var(--vermelho-danger)' : 'var(--verde-tag)';
+    icon.style.marginBottom = '10px';
+
+    // Cria o título
+    const title = document.createElement('h2');
+    title.innerText = titulo;
+
+    // Cria o texto de descrição
+    const text = document.createElement('p');
+    text.innerText = mensagem;
+
+    // Cria o botão de ação
+    const btn = document.createElement('button');
+    btn.className = 'btn-fechar';
+    btn.innerText = isErro ? 'Tentar novamente' : 'Entendido';
+    
+    // Define a ação do botão
+    btn.onclick = function() {
+        if (urlDestino) {
+            window.location.href = urlDestino; // Redireciona
+        } else {
+            document.body.removeChild(modal); // Apenas fecha o modal de erro
+        }
+    };
+
+    // Adiciona todos os elementos ao modal e o modal ao body da página
+    modalContent.appendChild(icon);
+    modalContent.appendChild(title);
+    modalContent.appendChild(text);
+    modalContent.appendChild(btn);
+    modal.appendChild(modalContent);
+    
+    document.body.appendChild(modal);
+}
+
 const botaoLogin = document.getElementById('btn-login');
 if (botaoLogin) {
     botaoLogin.addEventListener('click', function() {
@@ -48,13 +98,11 @@ if (botaoLogin) {
 
         // Compara com os dados fictícios
         if (email === 'joaosilva@email.com' && password === 'joaosilva123') {
-            
-            // Simula um login bem-sucedido
-            alert('Login bem-sucedido!');
-            // Redireciona para a página principal ou dashboard
-            window.location.href = './index.html'; // Substitua pelo caminho correto
+            // Exibe modal de sucesso e redireciona
+            mostrarModalMensagem('Login Aprovado!', 'Você será redirecionado para o Dashboard.', './index.html');
         } else {
-            alert('E-mail ou senha incorretos.');
+            // Exibe modal de erro (sem passar url, apenas fecha o modal)
+            mostrarModalMensagem('Erro no Login', 'E-mail ou senha incorretos.', null, true);
         }
     });
 }
@@ -62,9 +110,7 @@ if (botaoLogin) {
 const botaoSair = document.getElementById('btn-sair');
 if (botaoSair) {
     botaoSair.addEventListener('click', function() {
-        // Simula o processo de logout
-        alert('Você saiu da conta.');
-        // Redireciona para a página de login
-        window.location.href = './login.html'; // Substitua pelo caminho correto
+        // Exibe modal informando logout e redireciona para o login
+        mostrarModalMensagem('Até logo!', 'Você saiu da sua conta com segurança.', './login.html');
     });
 }
