@@ -1376,7 +1376,8 @@ input:checked+.slider:before {
 
 /* Container que envolve a imagem */
 #weather-visual {
-    width: 400px;           /* Tamanho total da moldura (pode ajustar) */
+    width: 100%;            /* Ocupa a largura disponível no card */
+    max-width: 400px;       /* Limite máximo para manter o visual bonito no desktop */
     height: 200px;          /* Mantém quadrado */
     margin: 0 auto 15px;    /* Centraliza na div e dá espaço pro texto abaixo */
     display: flex;          /* Para centralizar a img dentro */
