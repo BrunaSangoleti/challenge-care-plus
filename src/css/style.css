@@ -13,7 +13,7 @@
     --cinza-claro: #f8f9fa;
     --cinza-borda: #eee;
     --cinza-texto-suave: #6c757d;
-    --cinza-texto-escuro:#666;
+    --cinza-texto-escuro: #666;
     --branco: #ffffff;
 
     /* Sombras e Transparências */
@@ -75,20 +75,27 @@ img {
     padding: 20px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 24px;      /* Se for texto */
+    font-size: 24px;
+    /* Se for texto */
     color: var(--branco);
     text-align: center;
 }
 
 /* Se você estiver usando uma IMAGEM para a logo */
 .logo img {
-    width: 100%;          /* Ela tenta preencher o container... */
-    max-width: 160px;     /* ...mas para exatamente em 160px (tamanho ideal) */
-    height: auto;         /* ISSO evita que a imagem estique ou achate */
-    object-fit: contain;  /* Garante que a imagem caiba sem cortes */
+    width: 100%;
+    /* Ela tenta preencher o container... */
+    max-width: 160px;
+    /* ...mas para exatamente em 160px (tamanho ideal) */
+    height: auto;
+    /* ISSO evita que a imagem estique ou achate */
+    object-fit: contain;
+    /* Garante que a imagem caiba sem cortes */
     display: block;
-    margin: 0 auto;       /* Centraliza na sidebar */
+    margin: 0 auto;
+    /* Centraliza na sidebar */
 }
+
 .content {
     margin-left: 260px;
     padding: 40px;
@@ -138,7 +145,7 @@ img {
 .appointment-card.no-title {
     border-radius: 0 0 8px 8px;
     /* Mantém o efeito de "colado" no de cima */
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--cinza-borda);
 }
 
 .card-subtitle {
@@ -158,12 +165,12 @@ img {
     padding: 10px;
     color: var(--cinza-texto-escuro);
     font-size: 0.8rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--cinza-borda);
 }
 
 .table-row td {
     padding: 15px 10px;
-    border-bottom: 1px solid #f9f9f9;
+    border-bottom: 1px solid var(--cinza-claro);
     font-size: 0.9rem;
 }
 
@@ -245,12 +252,16 @@ img {
     border-color: var(--azul-escuro);
 
 }
+
 .btn-confirm.confirmado {
-    background-color: #f0fdf4 !important; /* Verde bem claro de fundo */
-    color: var(--azul-tag) !important;           /* Verde escuro para o texto */
+    background-color: #f0fdf4 !important;
+    /* Verde bem claro de fundo */
+    color: var(--azul-tag) !important;
+    /* Verde escuro para o texto */
     border: 1px solid var(--azul-tag) !important;
     cursor: default;
-    pointer-events: none; /* Garante que o usuário não consiga clicar mais */
+    pointer-events: none;
+    /* Garante que o usuário não consiga clicar mais */
 }
 
 .btn-reschedule {
@@ -286,10 +297,10 @@ img {
 
 /* Card de Saldo */
 .balance-card {
-    background-color: #f8f9fa;
+    background-color: var(--cinza-claro);
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid #e9ecef;
+    border: 1px solid var(--cinza-claro);
 }
 
 .balance-label {
@@ -370,7 +381,7 @@ img {
 .bibi-placeholder {
     width: 200px;
     height: 200px;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--cinza-texto-suave);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -405,7 +416,7 @@ img {
 }
 
 .table-header {
-    background-color: #f8f9fa;
+    background-color: var(--cinza-claro);
     text-align: left;
 }
 
@@ -414,12 +425,12 @@ img {
     color: var(--cinza-texto-escuro);
     font-size: 0.85rem;
     font-weight: 600;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid var(--cinza-fundo);
 }
 
 .table-row td {
     padding: 20px 15px;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid var(--cinza-fundo);
     font-size: 0.9rem;
     color: #333;
     vertical-align: middle;
@@ -661,7 +672,7 @@ input:checked+.slider:before {
     /* Corta o que sobrar da imagem para ficar circular */
     border: 4px solid var(--branco);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    background-color: #f8f9fa;
+    background-color: var(--cinza-claro);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -692,7 +703,7 @@ input:checked+.slider:before {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eee;
+    border: 1px solid var(--cinza-borda);
 }
 
 .booking-card h3 {
@@ -740,8 +751,8 @@ input:checked+.slider:before {
     width: 100%;
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border: 1px solid var(--cinza-texto-suave);
+    background-color: var(--cinza-claro);
     color: var(--cinza-texto-escuro);
 }
 
@@ -752,7 +763,7 @@ input:checked+.slider:before {
     gap: 20px;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--cinza-borda);
 }
 
 .btn-primary {
@@ -818,7 +829,7 @@ input:checked+.slider:before {
     font-weight: bold;
     font-size: 0.8rem;
     padding: 10px 0;
-    background: #f8f9fa;
+    background: var(--cinza-claro);
 }
 
 .calendar-days {
@@ -917,7 +928,7 @@ input:checked+.slider:before {
     .table-row {
         display: flex;
         flex-direction: column;
-        border-bottom: 2px solid #eee;
+        border-bottom: 2px solid var(--cinza-borda);
     }
 
     .points-dashboard {
@@ -976,19 +987,19 @@ input:checked+.slider:before {
     align-items: center;
 }
 
-/* Adicione esta classe para facilitar o controle via JS */
+
 .modal.active {
     display: flex;
 }
 
 /* Caixa do Modal - Tamanho reduzido e animação */
 .modal-content {
-    background-color: #fff;
+    background-color: var(--branco);
     padding: 25px;
     border-radius: 16px;
     width: 85%;
     max-width: 350px;
-    gap: 15px;/* Tamanho menor e mais delicado */
+    gap: 15px;
     text-align: center;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', system-ui, sans-serif;
@@ -1015,7 +1026,7 @@ input:checked+.slider:before {
     width: 100%;
     padding: 10px;
     margin: 8px 0 15px;
-    border: 1px solid #eee;
+    border: 1px solid var(--cinza-borda);
     border-radius: 8px;
     background-color: #fcfcfc;
     font-size: 0.9rem;
@@ -1025,7 +1036,7 @@ input:checked+.slider:before {
 .input-minimalista:focus {
     outline: none;
     border-color: #333;
-    background-color: #fff;
+    background-color: var(--branco);
 }
 
 /* Botões mais arredondados e elegantes */
@@ -1063,11 +1074,10 @@ input:checked+.slider:before {
     /* Faz o card esticar para ocupar a altura da linha */
 }
 
-/* 2. Configuração do Card */
+
 .card {
     display: flex;
     flex-direction: column;
-    /* Organiza o conteúdo em coluna */
     width: 100%;
     background: var(--branco);
     border-radius: 12px;
@@ -1076,59 +1086,50 @@ input:checked+.slider:before {
     border: 1px solid var(--cinza-borda);
     transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    /* Sombra leve ao redor */
     cursor: pointer;
     text-decoration: none;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    /* A leve saltada */
     opacity: 0.9;
-    /* Fica levemente translúcido */
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-    /* Sombra aumenta ao subir */
 }
 
 
 
-/* 4. Interação direta no Botão */
+
 .btn-action:hover {
     opacity: 1 !important;
-    /* Volta ao normal ao focar diretamente no botão */
     filter: brightness(1.1);
-    /* Dá um leve brilho para feedback visual */
+
 }
 
-/* 3. Imagem com tamanho fixo para não quebrar o layout */
+
 .card img {
     width: 100%;
     height: 200px;
-    /* Altura fixa para manter a simetria */
     object-fit: cover;
-    /* Corta a imagem sem distorcer para preencher o espaço */
+    
 }
 
-/* 4. Corpo do Card (O segredo do alinhamento) */
+
 .card-body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* Faz o corpo ocupar todo o espaço restante */
     padding: 20px;
 }
 
-/* 5. Texto do card */
+
 .card-text {
     flex-grow: 1;
-    /* Empurra os botões para a parte inferior se o texto for curto */
     margin-bottom: 20px;
 }
 
-/* 6. Botões sempre no rodapé */
+
 .action-buttons {
     margin-top: auto;
-    /* Garante que o botão fique sempre no final do card */
     width: 100%;
 }
 
@@ -1137,10 +1138,8 @@ input:checked+.slider:before {
 
 .container-topo {
     display: grid;
-    /* Divide o espaço em 3 partes exatamente iguais */
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    /* Espaçamento entre os cards */
     width: 100%;
     margin-bottom: 30px;
 }
@@ -1150,12 +1149,11 @@ input:checked+.slider:before {
     flex-direction: column;
 }
 
-/* Estilo comum para os cards dentro do grid */
+
 .card-topo>div {
     background: var(--branco);
     border-radius: 12px;
-    border: 1px solid var(--cinza-borda, #eee);
-    /* Leve sombra solicitada */
+    border: 1px solid var(--cinza-borda);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
@@ -1165,7 +1163,7 @@ input:checked+.slider:before {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsividade: Em telas menores, os cards ficam um abaixo do outro */
+
 @media (max-width: 992px) {
     .container-topo {
         grid-template-columns: 1fr;
@@ -1174,7 +1172,6 @@ input:checked+.slider:before {
 
 .container-imagem {
     position: relative;
-    /* O pai precisa ser relativo */
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -1190,34 +1187,23 @@ input:checked+.slider:before {
 
 .texto-sobreposto {
     position: absolute;
-    /* O texto flutua sobre o pai */
     top: 50%;
-    /* Mantém centralizado verticalmente */
     right: 5%;
-    /* Alinha à direita com uma pequena margem da borda */
     transform: translateY(-50%);
-    /* Ajuste fino apenas para o eixo vertical */
-
     color: var(--branco);
-    /* text-align: right; Garante que o texto dentro do bloco alinhe à direita */
     max-width: 40%;
-    /* Evita que o texto ocupe a imagem inteira horizontalmente */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .mascote-guia {
     max-width: 26%;
-    /* Regra de ouro: nunca maior que o container */
     height: auto;
-    /* Mantém a proporção original (não achata) */
     display: block;
 }
 
 .mascote-pontos {
     max-width: 26%;
-    /* Regra de ouro: nunca maior que o container */
     height: auto;
-    /* Mantém a proporção original (não achata) */
     display: flex;
     align-self: flex-end;
 }
@@ -1255,7 +1241,7 @@ input:checked+.slider:before {
     margin: 5px 0;
 }
 
-/* Section Titles */
+
 .section-title {
     font-size: 1.8rem;
     margin-bottom: 20px;
@@ -1263,18 +1249,17 @@ input:checked+.slider:before {
     padding-bottom: 10px;
 }
 
-/* Activities Grid */
 .grid-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-bottom: 40px;
 }
+
 .grid-cards>div {
-    background: var(--branco, #fff);
+    background: var(--branco);
     border-radius: 12px;
-    border: 1px solid var(--cinza-borda, #eee);
-    /* Leve sombra solicitada */
+    border: 1px solid var(--cinza-borda);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
@@ -1285,22 +1270,22 @@ input:checked+.slider:before {
 }
 
 .card-activity {
-    position: relative; 
-    overflow: hidden;   
+    position: relative;
+    overflow: hidden;
     background: var(--branco);
     padding: 20px;
     border-radius: 12px;
-    border: 1px solid var(--cinza-borda, #eee);
+    border: 1px solid var(--cinza-borda);
 }
 
-/* Barra dourada superior perfeita */
+
 .card-activity::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 5px; /* Grossura da borda */
+    height: 5px;
     background: var(--dourado);
 }
 
@@ -1326,24 +1311,24 @@ input:checked+.slider:before {
     margin-top: 15px;
 }
 
-.btn-participar:hover{
+.btn-participar:hover {
     transition: opacity 0.3s ease;
     cursor: pointer;
     opacity: 0.8;
 
 }
 
-/* Rewards Section */
+
 .grid-rewards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+
 .grid-rewards>div {
     background: var(--branco);
     border-radius: 12px;
-    border: 1px solid var(--cinza-borda, #eee);
-    /* Leve sombra solicitada */
+    border: 1px solid var(--cinza-borda);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
@@ -1352,8 +1337,9 @@ input:checked+.slider:before {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
+
 .btn-participar.participando {
-    background-color: #e8f5e9;
+    background-color: var(--cinza-fundo);
     color: var(--azul-tag);
     border: 1px solid var(--azul-tag);
     cursor: default;
@@ -1362,57 +1348,60 @@ input:checked+.slider:before {
 .mensagem-sucesso {
     margin-top: 15px;
     padding: 10px;
-    background-color: #e8f5e9;
+    background-color: var(--cinza-fundo);
     color: var(--verde-tag);
     border-radius: 6px;
     font-size: 0.9rem;
     border-left: 4px solid var(--verde-tag);
 }
 
-/* Classe utilitária para esconder elementos */
+
 .hidden {
     display: none;
 }
 
-/* Container que envolve a imagem */
+
 #weather-visual {
-    width: 100%;            /* Ocupa a largura disponível no card */
-    max-width: 400px;       /* Limite máximo para manter o visual bonito no desktop */
-    height: 200px;          /* Mantém quadrado */
-    margin: 0 auto 15px;    /* Centraliza na div e dá espaço pro texto abaixo */
-    display: flex;          /* Para centralizar a img dentro */
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    margin: 0 auto 15px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;       /* Garante que o arredondado corte a img se necessário */
-    background-color: #f8f9fa; /* Um fundo bem clarinho pra dar profundidade */
-    border: 1px solid #e1e8ed; /* Uma borda suave */
-    border-radius: 20px;    /* O arredondamento das pontas! */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Uma sombra leve */
+    overflow: hidden;
+    background-color: var(--cinza-claro);
+    border: 1px solid #e1e8ed;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    
 }
 
-/* Regras para a imagem real */
+
 #weather-img {
-    width: 100%;            /* A imagem preenche a div-moldura */
+    width: 100%;
     height: 100%;
-    object-fit: contain;    /* CRÍTICO: Garante que a img mantenha proporção sem distorcer, cortando apenas o excesso se necessário para preencher */
-    transition: all 0.3s ease; /* Transição suave na troca */
+    object-fit: contain;
+    transition: all 0.3s ease;
+    
 }
 
-/* Estilo para os dias que já passaram (Bloqueados) */
+
 .calendar-day.past-day {
-    background-color: #f2f2f2; /* Cinza bem clarinho para o fundo */
-    color: #b0b0b0;           /* Texto em cinza fosco */
-    cursor: not-allowed;      /* Muda o mouse para aquele ícone de círculo riscado */
-    opacity: 0.7;             /* Deixa o elemento levemente transparente */
-    pointer-events: none;     /* Garante que nenhum clique seja registrado, por segurança */
-    border: none !important;  /* Remove qualquer borda que possa aparecer */
+    background-color: #f2f2f2;
+    color: #b0b0b0;
+    cursor: not-allowed;
+    opacity: 0.7;
+    pointer-events: none;
+    border: none !important;
+    
 }
 
-/* Garante que ao passar o mouse em um dia passado, não haja efeito de destaque */
+
 .calendar-day.past-day:hover {
     background-color: #f2f2f2 !important;
     color: #b0b0b0 !important;
-    transform: none !important; /* Se você tiver animação de zoom, ela será removida aqui */
+    transform: none !important;
     box-shadow: none !important;
 }
 
