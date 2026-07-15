@@ -12,7 +12,16 @@
 </head>
 
 <body>
-    <nav class="sidebar">
+    <!-- Hamburger Button (mobile only) -->
+    <button id="hamburger-btn" class="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <!-- Overlay escuro ao abrir o menu -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <nav class="sidebar" id="sidebar">
         <a href="./index.html" class="logo"><img src="./src/img/logo.png"></a>
         <ul class="sidebar-menu">
             <li><a href="./index.html">Dashboard</a></li>
@@ -156,6 +165,7 @@
                             crossorigin="anonymous"></script>
                         <script src="./src/js/btnListener.js"></script>
                         <script src="./src/js/modal.js"></script>
+                        <script src="./src/js/hamburger.js"></script>
 </body>
 
 </html>

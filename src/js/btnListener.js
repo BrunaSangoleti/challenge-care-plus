@@ -35,7 +35,7 @@ botoesConfirmar.forEach(botao => {
         this.disabled = true;
 
         // O onclick="mostrarConfirmacao()" continuará funcionando 
-        // normalmente e abrirá seu modal em paralelo.
+        // normalmente e abrirá modal em paralelo.
     });
 });
 

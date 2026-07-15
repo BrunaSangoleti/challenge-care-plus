@@ -15,7 +15,16 @@
 </head>
 
 <body>
-    <nav class="sidebar">
+    <!-- Hamburger Button (mobile only) -->
+    <button id="hamburger-btn" class="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <!-- Overlay escuro ao abrir o menu -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <nav class="sidebar" id="sidebar">
         <a href="./index.html" class="logo"><img src="./src/img/logo.png"></a>
         <ul class="sidebar-menu">
             <li><a href="./index.html">Dashboard</a></li>
@@ -146,4 +155,5 @@
     <script src="./src/js/calendar.js"></script>
                     <script src="./src/js/map.js"></script>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./src/js/hamburger.js"></script>
 </body>
